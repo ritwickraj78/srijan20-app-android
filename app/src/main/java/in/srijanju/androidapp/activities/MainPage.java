@@ -1,11 +1,7 @@
 package in.srijanju.androidapp.activities;
 
-<<<<<<< HEAD
 import android.os.Build;
-||||||| merged common ancestors
-=======
 import android.content.Intent;
->>>>>>> 6c48a05daf57ae7dd7e3cd58311864dea56c0918
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,6 +20,7 @@ import in.srijanju.androidapp.R;
 
 public class MainPage extends AppCompatActivity {
 	private TextView a;
+	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
