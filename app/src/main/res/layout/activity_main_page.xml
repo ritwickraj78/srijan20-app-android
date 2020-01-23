@@ -37,19 +37,18 @@
 		android:layout_height="match_parent"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.36" />
+
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_profile_circle"
-		android:paddingLeft="150px"
 		android:scaleType="fitStart"
-		android:scaleX="0.5"
-		android:scaleY="0.5"
+		android:scaleX="0.4"
+		android:scaleY="0.48"
 		android:src="@drawable/avenger"
-		app:layout_constraintEnd_toEndOf="@id/line1"
-		app:layout_constraintStart_toStartOf="@id/line0"
 		app:layout_constraintBottom_toTopOf="@+id/profilesetter"
-		/>
+		app:layout_constraintEnd_toEndOf="@id/line1"
+		app:layout_constraintStart_toStartOf="@id/line0" />
 
 
 	<androidx.constraintlayout.widget.Guideline
@@ -72,7 +71,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.33" />
+		app:layout_constraintGuide_percent="0.4" />
 
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/line2"
@@ -94,6 +93,7 @@
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
 		app:layout_constraintGuide_percent="0" />
+
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/g_top_right2"
 		android:layout_width="match_parent"
@@ -105,18 +105,18 @@
 		android:id="@+id/timer"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:background="@drawable/timer_background"
 		android:contentDescription="@string/main_page_timer_background"
+		android:padding="50dp"
 		android:scaleType="fitStart"
 		android:scaleX="1"
 		android:scaleY="0.3"
-		android:padding="50dp"
-		android:background="@drawable/timer_background"
 		android:text="HELLO"
-		android:textSize="100px"
 		android:textColor="#ffffff"
-		app:layout_constraintTop_toBottomOf="@+id/g_top_right2"
-		app:layout_constraintBottom_toTopOf="@+id/about"
-		app:layout_constraintStart_toStartOf="@+id/line0"/>
+		android:textSize="30sp"
+		app:layout_constraintBottom_toTopOf="@+id/iv_about"
+		app:layout_constraintStart_toStartOf="@+id/line0"
+		app:layout_constraintTop_toBottomOf="@+id/g_top_right2" />
 
 
 	<androidx.constraintlayout.widget.Guideline
@@ -177,15 +177,13 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_background_bottom"
-
 		android:scaleX="1.25"
 		android:scaleY="1.5"
 		android:src="@drawable/mp_back_bottom"
-		app:layout_constraintTop_toBottomOf="@id/options3"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		/>
+		app:layout_constraintTop_toBottomOf="@id/options3" />
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -233,12 +231,14 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.6" />
+
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/options2"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.72" />
+		app:layout_constraintGuide_percent="0.3" />
+
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/options3"
 		android:layout_width="match_parent"
@@ -247,9 +247,10 @@
 		app:layout_constraintGuide_percent="0.87" />
 
 	<ImageView
-		android:id="@+id/about"
+		android:id="@+id/iv_about"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
 		android:contentDescription="@string/main_page_about"
 		android:scaleType="fitStart"
 		android:scaleX="1.4"
@@ -258,11 +259,13 @@
 		app:layout_constraintBottom_toTopOf="@+id/options2"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/options1"
-		 />
+		app:layout_constraintTop_toBottomOf="@id/options1" />
+
 	<ImageView
+		android:id="@+id/iv_events"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
 		android:contentDescription="@string/main_page_events"
 		android:scaleType="fitStart"
 		android:scaleX="1.3"
@@ -271,8 +274,7 @@
 		app:layout_constraintBottom_toTopOf="@+id/options3"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/options2"
-		/>
+		app:layout_constraintTop_toBottomOf="@id/options2" />
 
 	<!--
 	<LinearLayout
@@ -329,7 +331,6 @@
 	</LinearLayout>
 
 	-->
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
