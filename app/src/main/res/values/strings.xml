@@ -11,4 +11,15 @@
 	<string name="main_page_background_top">Main page background top</string>
 	<string name="main_page_background_bottom">Main page background bottom</string>
 	<string name="main_page_circles_top_right">Main page circles top right</string>
+	<string name="main_page_sponsor">Main page sponsor</string>
+	<string name="main_page_gallery">Main page gallery</string>
+	<string name="main_page_ambassador">Main page ambassador</string>
+	<string name="main_page_about">About</string>
+	<string name="main_page_events">Events</string>
+	<string name="main_page_facebook">Facebook icon</string>
+	<string name="main_page_instagram">Instagram icon</string>
+	<string name="main_page_phone">Phone icon</string>
+	<string name="main_page_mail">Mail icon</string>
+	<string name="main_page_youtube">Youtube icon</string>
+	<string name="main_page_gallery_written">Gallery written</string>
 </resources>

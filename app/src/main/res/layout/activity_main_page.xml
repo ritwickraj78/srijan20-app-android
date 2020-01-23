@@ -45,12 +45,48 @@
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.525" />
 
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/line1"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.33" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/line2"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.66" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/line3"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.99" />
+
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/g_top_right2"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.25" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/bottomline"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.79" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/bottommostline"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="1" />
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -95,12 +131,158 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_background_bottom"
-		android:scaleType="fitEnd"
+
 		android:scaleX="1.25"
-		android:scaleY="1.3"
+		android:scaleY="1.5"
 		android:src="@drawable/mp_back_bottom"
+		app:layout_constraintTop_toBottomOf="@id/options3"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
+		app:layout_constraintStart_toStartOf="parent"
+		/>
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_sponsor"
+		android:scaleType="fitStart"
+		android:scaleX="0.5"
+		android:scaleY="0.5"
+		android:src="@drawable/sponsors"
+		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
+		app:layout_constraintEnd_toEndOf="@id/line1"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/bottomline" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_gallery"
+		android:scaleType="fitStart"
+		android:scaleX="0.5"
+		android:scaleY="0.5"
+		android:src="@drawable/gallery"
+		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
+		app:layout_constraintEnd_toEndOf="@id/line2"
+		app:layout_constraintStart_toStartOf="@+id/line1"
+		app:layout_constraintTop_toBottomOf="@id/bottomline" />
+
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_ambassador"
+		android:scaleType="fitStart"
+		android:scaleX="0.5"
+		android:scaleY="0.5"
+		android:src="@drawable/campusambassador"
+		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
+		app:layout_constraintEnd_toEndOf="@id/line3"
+		app:layout_constraintStart_toStartOf="@+id/line2"
+		app:layout_constraintTop_toBottomOf="@id/bottomline" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.6" />
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.72" />
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.87" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_about"
+		android:scaleType="fitStart"
+		android:scaleX="1.4"
+		android:scaleY="1.3"
+		android:src="@drawable/about"
+		app:layout_constraintBottom_toTopOf="@+id/options2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/options1"
+		 />
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_events"
+		android:scaleType="fitStart"
+		android:scaleX="1.3"
+		android:scaleY="1.3"
+		android:src="@drawable/events"
+		app:layout_constraintBottom_toTopOf="@+id/options3"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/options2"
+		/>
+
+	<!--
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="@id/line2"
+		app:layout_constraintStart_toStartOf="@id/line1"
+		app:layout_constraintTop_toBottomOf="@id/bottommostline"
+		android:orientation="horizontal"
+		android:weightSum="5">
+
+		<ImageView
+			android:layout_width="0px"
+			android:layout_height="100px"
+			android:src="@drawable/youtube"
+			android:layout_weight="1"/>
+		<View
+			android:layout_width="4dp"
+			android:layout_height="100px"
+			android:background="#ffffff"/>
+		<ImageView
+			android:layout_width="0px"
+			android:layout_height="100px"
+			android:src="@drawable/phone"
+			android:layout_weight="1"/>
+		<View
+			android:layout_width="4dp"
+			android:layout_height="100px"
+			android:background="#ffffff"/>
+		<ImageView
+			android:layout_width="0px"
+			android:layout_height="100px"
+			android:src="@drawable/mail"
+			android:layout_weight="1"/>
+		<View
+			android:layout_width="4dp"
+			android:layout_height="100px"
+			android:background="#ffffff"/>
+		<ImageView
+			android:layout_width="0px"
+			android:layout_height="100px"
+			android:src="@drawable/facebook"
+			android:layout_weight="1"/>
+		<View
+			android:layout_width="4dp"
+			android:layout_height="100px"
+			android:background="#ffffff"/>
+		<ImageView
+			android:layout_width="0px"
+			android:layout_height="100px"
+			android:src="@drawable/instagram"
+			android:layout_weight="1"/>
+
+	</LinearLayout>
+
+	-->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
