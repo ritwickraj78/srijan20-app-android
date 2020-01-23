@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/splash_back"
+	tools:context=".activities.MainActivity">
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/srijan_back_guide"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.6" />
+
+	<ImageView
+		android:id="@+id/iv_srijan_circle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/srijan_circles"
+		android:scaleX="1.6"
+		android:scaleY="1.6"
+		android:src="@drawable/splash_circles_upper"
+		app:layout_constraintBottom_toTopOf="@id/srijan_back_guide"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="108dp"
+		android:contentDescription="@string/triangle_above_srijan_circle"
+		android:scaleX="1.05"
+		android:scaleY="1.1"
+		android:src="@drawable/splash_triangle_upper_above_circle"
+		app:layout_constraintBottom_toBottomOf="@id/iv_srijan_circle"
+		app:layout_constraintLeft_toLeftOf="@id/iv_srijan_circle"
+		app:layout_constraintRight_toRightOf="@id/iv_srijan_circle"
+		app:layout_constraintTop_toTopOf="@id/iv_srijan_circle" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/fetsu_presents_srijan_20"
+		android:scaleX="0.7"
+		android:scaleY="0.7"
+		android:src="@drawable/srijan20_upper"
+		app:layout_constraintBottom_toBottomOf="@id/iv_srijan_circle"
+		app:layout_constraintLeft_toLeftOf="@id/iv_srijan_circle"
+		app:layout_constraintRight_toRightOf="@id/iv_srijan_circle"
+		app:layout_constraintTop_toTopOf="@id/iv_srijan_circle" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:gravity="center"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent">
+
+		<ImageView
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="8dp"
+			android:background="@android:color/white"
+			android:contentDescription="@string/jadavpur_university_logo"
+			android:src="@drawable/ju_logo" />
+
+		<ImageView
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="8dp"
+			android:background="@android:color/white"
+			android:contentDescription="@string/ccusl_logo"
+			android:src="@drawable/ccjusl_logo" />
+
+		<ImageView
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="8dp"
+			android:background="@android:color/white"
+			android:contentDescription="@string/ju_games_society_logo"
+			android:src="@drawable/ju_game_society_logo" />
+
+		<ImageView
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="8dp"
+			android:background="@android:color/white"
+			android:contentDescription="@string/ju_science_club_logo"
+			android:src="@drawable/jusc_logo" />
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

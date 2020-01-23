@@ -1,0 +1,10 @@
+<resources>
+	<string name="app_name">Srijan 20</string>
+	<string name="srijan_circles">Srijan circles</string>
+	<string name="triangle_above_srijan_circle">Triangle above srijan circle</string>
+	<string name="fetsu_presents_srijan_20">Fetsu presents srijan 20</string>
+	<string name="jadavpur_university_logo">Jadavpur University logo</string>
+	<string name="ccusl_logo">Codeclub jusl logo</string>
+	<string name="ju_games_society_logo">JU Games society logo</string>
+	<string name="ju_science_club_logo">JU Science club logo</string>
+</resources>
