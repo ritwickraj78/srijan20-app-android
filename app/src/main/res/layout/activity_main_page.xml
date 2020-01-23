@@ -32,6 +32,27 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/profilesetter"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.36" />
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_profile_circle"
+		android:paddingLeft="150px"
+		android:scaleType="fitStart"
+		android:scaleX="0.5"
+		android:scaleY="0.5"
+		android:src="@drawable/avenger"
+		app:layout_constraintEnd_toEndOf="@id/line1"
+		app:layout_constraintStart_toStartOf="@id/line0"
+		app:layout_constraintBottom_toTopOf="@+id/profilesetter"
+		/>
+
+
+	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/g_top_right"
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
@@ -68,11 +89,35 @@
 		app:layout_constraintGuide_percent="0.99" />
 
 	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/line0"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0" />
+	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/g_top_right2"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.25" />
+
+	<TextView
+		android:id="@+id/timer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_timer_background"
+		android:scaleType="fitStart"
+		android:scaleX="1"
+		android:scaleY="0.3"
+		android:padding="50dp"
+		android:background="@drawable/timer_background"
+		android:text="HELLO"
+		android:textSize="100px"
+		android:textColor="#ffffff"
+		app:layout_constraintTop_toBottomOf="@+id/g_top_right2"
+		app:layout_constraintBottom_toTopOf="@+id/about"
+		app:layout_constraintStart_toStartOf="@+id/line0"/>
+
 
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/bottomline"
@@ -115,6 +160,7 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
+		android:id="@+id/srijan"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/fetsu_presents_srijan_20"
@@ -201,6 +247,7 @@
 		app:layout_constraintGuide_percent="0.87" />
 
 	<ImageView
+		android:id="@+id/about"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_about"
