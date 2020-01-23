@@ -1,8 +1,11 @@
 package in.srijanju.androidapp.activities;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.graphics.Typeface;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import in.srijanju.androidapp.R;
@@ -14,13 +17,14 @@ import java.util.TimerTask;
 public class MainPage extends AppCompatActivity {
 
 	TextView a;
+	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
 		a=(TextView)findViewById(R.id.timer);
-
-
+		Typeface myCustomFont=getResources().getFont(R.font.timerfont);
+		a.setTypeface(myCustomFont);
 		final Calendar thatDay = Calendar.getInstance();
 		thatDay.setTime(new Date(0)); /* reset */
 		thatDay.set(Calendar.DAY_OF_MONTH,5);
@@ -42,7 +46,7 @@ public class MainPage extends AppCompatActivity {
 				long minutes = (secondsDay / 60) % 60;
 				long hours = (secondsDay / 3600); // % 24 not needed
 
-				String s=days+" DAYS " + hours +" HOURS "+minutes+ " MINUTES " +seconds+" SECONDSto go!";
+				String s=days+" DAYS \n\n" + hours +" HOURS \n\n to go! ";
 				setText(a,s);
 
 			}

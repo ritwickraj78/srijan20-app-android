@@ -112,7 +112,7 @@
 		android:padding="50dp"
 		android:background="@drawable/timer_background"
 		android:text="HELLO"
-		android:textSize="100px"
+		android:textSize="30sp"
 		android:textColor="#ffffff"
 		app:layout_constraintTop_toBottomOf="@+id/g_top_right2"
 		app:layout_constraintBottom_toTopOf="@+id/about"
