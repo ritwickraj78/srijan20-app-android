@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import in.srijanju.androidapp.MainPage;
 import in.srijanju.androidapp.R;
 import in.srijanju.androidapp.utils.Screen;
 
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 					e.printStackTrace();
 				} finally {
 					startActivity(new Intent(MainActivity.this, MainPage.class));
+					finish();
 				}
 			}
 		}).start();

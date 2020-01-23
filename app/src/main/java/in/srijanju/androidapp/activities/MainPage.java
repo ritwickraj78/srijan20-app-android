@@ -1,8 +1,10 @@
-package in.srijanju.androidapp;
+package in.srijanju.androidapp.activities;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import in.srijanju.androidapp.R;
 
 public class MainPage extends AppCompatActivity {
 

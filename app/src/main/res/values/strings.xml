@@ -7,4 +7,8 @@
 	<string name="ccusl_logo">Codeclub jusl logo</string>
 	<string name="ju_games_society_logo">JU Games society logo</string>
 	<string name="ju_science_club_logo">JU Science club logo</string>
+	<string name="main_page_background_circles">Main page background circles</string>
+	<string name="main_page_background_top">Main page background top</string>
+	<string name="main_page_background_bottom">Main page background bottom</string>
+	<string name="main_page_circles_top_right">Main page circles top right</string>
 </resources>

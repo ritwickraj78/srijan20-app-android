@@ -4,16 +4,103 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".MainPage">
+	android:background="@drawable/mp_background"
+	tools:context=".activities.MainPage">
 
-	<TextView
+	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Main page"
-		android:textSize="48sp"
+		android:contentDescription="@string/main_page_background_circles"
+		android:scaleX="1.2"
+		android:scaleY="1.2"
+		android:src="@drawable/mp_circles_center"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_background_top"
+		android:scaleType="fitStart"
+		android:scaleX="1.25"
+		android:scaleY="1.3"
+		android:src="@drawable/mp_background_top"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/g_top_right"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.375" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/g_top_right1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.525" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/g_top_right2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.25" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_circles_top_right"
+		android:scaleType="fitStart"
+		android:scaleX="0.85"
+		android:scaleY="0.85"
+		android:src="@drawable/mp_circles_upper_right"
+		app:layout_constraintBottom_toTopOf="@id/g_top_right1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/triangle_above_srijan_circle"
+		android:scaleType="fitStart"
+		android:scaleX="0.55"
+		android:scaleY="0.55"
+		android:src="@drawable/splash_triangle_upper_above_circle"
+		app:layout_constraintBottom_toTopOf="@id/g_top_right1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/fetsu_presents_srijan_20"
+		android:scaleType="fitStart"
+		android:scaleX="0.35"
+		android:scaleY="0.35"
+		android:src="@drawable/srijan20_upper"
+		app:layout_constraintBottom_toTopOf="@id/g_top_right2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_background_bottom"
+		android:scaleType="fitEnd"
+		android:scaleX="1.25"
+		android:scaleY="1.3"
+		android:src="@drawable/mp_back_bottom"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
