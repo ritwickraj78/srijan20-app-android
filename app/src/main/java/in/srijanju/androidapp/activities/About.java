@@ -2,6 +2,14 @@ package in.srijanju.androidapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -112,6 +120,7 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 			this.context = context;
 			this.values = values;
 		}
+
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
