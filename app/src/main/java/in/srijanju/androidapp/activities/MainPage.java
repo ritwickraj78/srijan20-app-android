@@ -39,6 +39,13 @@ public class MainPage extends AppCompatActivity {
 		thatDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
 		thatDay.set(Calendar.YEAR, 2020);
 
+		final Calendar lastDay = Calendar.getInstance();
+		lastDay.setTime(new Date(0)); /* reset */
+		lastDay.set(Calendar.DAY_OF_MONTH,9);
+		lastDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
+		lastDay.set(Calendar.YEAR, 2020);
+
+
 		final int SECONDS_IN_A_DAY = 24 * 60 * 60;
 		Timer t = new Timer();
 		t.schedule(new TimerTask() {
@@ -46,15 +53,36 @@ public class MainPage extends AppCompatActivity {
 			public void run() {
 				Calendar today = Calendar.getInstance();
 				long diff = thatDay.getTimeInMillis() - today.getTimeInMillis();
-				long diffSec = diff / 1000;
+				if(diff>=0) {
+					long diffSec = diff / 1000;
 
-				long days = diffSec / SECONDS_IN_A_DAY;
-				long secondsDay = diffSec % SECONDS_IN_A_DAY;
-				long seconds = secondsDay % 60;
-				long minutes = (secondsDay / 60) % 60;
-				long hours = (secondsDay / 3600); // % 24 not needed
-				String s=days+" DAYS \n\n" + hours +" HOURS \n\n to go! ";
-				setText(a, s);
+					long days = diffSec / SECONDS_IN_A_DAY;
+					long secondsDay = diffSec % SECONDS_IN_A_DAY;
+					long seconds = secondsDay % 60;
+					long minutes = (secondsDay / 60) % 60;
+					long hours = (secondsDay / 3600); // % 24 not needed
+					String s = days + " DAYS \n\n" + hours + " HOURS \n\n to go! ";
+					setText(a, s);
+				}
+				else
+				{
+					long difference = lastDay.getTimeInMillis() - today.getTimeInMillis();
+					long diffSec = difference / 1000;
+					if(difference>=0) {
+						long days = diffSec / SECONDS_IN_A_DAY;
+						long secondsDay = diffSec % SECONDS_IN_A_DAY;
+						long seconds = secondsDay % 60;
+						long minutes = (secondsDay / 60) % 60;
+						long hours = (secondsDay / 3600); // % 24 not needed
+						String s =" Srijan \n\n is live \n\n now";
+						setText(a, s);
+					}
+					else
+					{
+						setText(a," Srijan\n\n over");
+					}
+				}
+
 			}
 		}, 0, 1000);
 
