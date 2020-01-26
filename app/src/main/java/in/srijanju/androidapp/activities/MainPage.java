@@ -1,11 +1,14 @@
 package in.srijanju.androidapp.activities;
 
+import android.os.Build;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.graphics.Typeface;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
@@ -16,14 +19,15 @@ import java.util.TimerTask;
 import in.srijanju.androidapp.R;
 
 public class MainPage extends AppCompatActivity {
-
 	private TextView a;
-
+	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
-
+		a=(TextView)findViewById(R.id.timer);
+		Typeface myCustomFont=getResources().getFont(R.font.timerfont);
+		a.setTypeface(myCustomFont);
 		initialise();
 
 		/*
@@ -49,11 +53,8 @@ public class MainPage extends AppCompatActivity {
 				long seconds = secondsDay % 60;
 				long minutes = (secondsDay / 60) % 60;
 				long hours = (secondsDay / 3600); // % 24 not needed
-
-				String s = days + " DAYS " + hours + " HOURS " + minutes + " MINUTES " + seconds + " " +
-					"SECONDSto go!";
+				String s=days+" DAYS \n\n" + hours +" HOURS \n\n to go! ";
 				setText(a, s);
-
 			}
 		}, 0, 1000);
 

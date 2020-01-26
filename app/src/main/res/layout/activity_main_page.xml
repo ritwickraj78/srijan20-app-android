@@ -45,7 +45,7 @@
 		android:scaleType="fitStart"
 		android:scaleX="0.4"
 		android:scaleY="0.48"
-		android:src="@drawable/avenger"
+		android:src="@drawable/avengerpro"
 		app:layout_constraintBottom_toTopOf="@+id/profilesetter"
 		app:layout_constraintEnd_toEndOf="@id/line1"
 		app:layout_constraintStart_toStartOf="@id/line0" />
