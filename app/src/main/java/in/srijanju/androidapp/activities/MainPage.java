@@ -26,7 +26,7 @@ public class MainPage extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
 		a=(TextView)findViewById(R.id.timer);
-		Typeface myCustomFont=getResources().getFont(R.font.timerfont);
+		Typeface myCustomFont=getResources().getFont(R.font.payback);
 		a.setTypeface(myCustomFont);
 		initialise();
 
