@@ -1,159 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/mp_background"
-	tools:context=".activities.About">
+	tools:context=".activities.Events">
 
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_background_circles"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/srijan_circles"
 		android:scaleX="1.2"
 		android:scaleY="1.2"
 		android:src="@drawable/mp_circles_center"
 		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_background_top"
-		android:scaleType="fitStart"
-		android:scaleX="1.25"
-		android:scaleY="1.3"
-		android:src="@drawable/mp_background_top"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
+		android:contentDescription="@string/event_black_overlay"
+		android:scaleY="1.2"
+		android:src="@drawable/event_black_overlay"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/profilesetter"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.36" />
-
-	<ImageView
-		android:id="@+id/imageView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_profile_circle"
-		android:scaleType="fitStart"
-		android:scaleX="0.4"
-		android:scaleY="0.48"
-		android:src="@drawable/avengerpro"
-		app:layout_constraintBottom_toTopOf="@+id/profilesetter"
-		app:layout_constraintEnd_toEndOf="@id/line1"
-		app:layout_constraintStart_toStartOf="@id/line0" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/g_top_right"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.375" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/g_top_right1"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.525" />
-
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/line1"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.4" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/line2"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.66" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/line3"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.99" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/line0"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/g_top_right2"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.25" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/bottomline"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.75" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/bottommostline"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="1" />
-
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_circles_top_right"
-		android:scaleType="fitStart"
-		android:scaleX="0.85"
-		android:scaleY="0.85"
-		android:src="@drawable/mp_circles_upper_right"
-		app:layout_constraintBottom_toTopOf="@id/g_top_right1"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_events"
+		android:src="@drawable/events_back_border"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/triangle_above_srijan_circle"
-		android:scaleType="fitStart"
-		android:scaleX="0.55"
-		android:scaleY="0.55"
-		android:src="@drawable/splash_triangle_upper_above_circle"
-		app:layout_constraintBottom_toTopOf="@id/g_top_right1"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		android:layout_marginTop="4dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_events"
+		android:scaleX="0.7"
+		android:scaleY="0.7"
+		android:src="@drawable/events_back"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
-	<ImageView
-		android:id="@+id/srijan"
+	<TextView
+		android:id="@+id/tv_events"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/fetsu_presents_srijan_20"
-		android:scaleType="fitStart"
-		android:scaleX="0.35"
-		android:scaleY="0.35"
-		android:src="@drawable/srijan20_upper"
-		app:layout_constraintBottom_toTopOf="@id/g_top_right2"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@id/g_top_right"
+		android:layout_marginTop="14dp"
+		android:fontFamily="sans-serif-thin"
+		android:gravity="center"
+		android:text="About"
+		android:textColor="@android:color/black"
+		android:textSize="48sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -162,21 +73,13 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.30" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline3"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.55" />
+		app:layout_constraintGuide_percent="0.2" />
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline4"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="1" />
-
 	<androidx.core.widget.NestedScrollView
 		android:layout_width="0dp"
 		android:layout_height="0dp"
@@ -192,6 +95,9 @@
 				android:id="@+id/srijanVid"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:padding="2dp"
+				android:layout_margin="10dp"
+				android:background="#f99245"
 				/>
 
 			<TextView
@@ -201,9 +107,11 @@
 				android:padding="8dp"
 				android:scaleX="1"
 				android:scaleY="1"
-				android:text="HELLO"
+				android:layout_marginLeft="10dp"
+				android:text="HELLO how are you "
 				android:textColor="#ffffff"
-				android:textSize="18sp"
+				android:fontFamily="@font/kg"
+				android:textSize="26sp"
 				android:layout_below="@+id/srijanVid"/>
 
 			<LinearLayout
@@ -263,7 +171,14 @@
 					android:text="App Developed By: "
 					android:textColor="#ffffff"
 					android:textSize="33dp"
+					android:textAlignment="center"
+					android:layout_marginTop="25dp"
+					android:layout_marginBottom="15dp"
 					android:fontFamily="@font/payback"
+					android:shadowColor="#f99245"
+					android:shadowDx="-2"
+					android:shadowDy="-2"
+					android:shadowRadius="1"
 					/>
 				<LinearLayout
 					android:id="@+id/creatorsList"

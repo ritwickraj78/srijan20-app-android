@@ -7,6 +7,30 @@
 	android:background="@drawable/mp_background"
 	tools:context=".activities.EventDescription">
 
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/srijan_circles"
+		android:scaleX="1.2"
+		android:scaleY="1.2"
+		android:src="@drawable/mp_circles_center"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/event_black_overlay"
+		android:scaleY="1.2"
+		android:src="@drawable/event_black_overlay"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
 	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
@@ -40,8 +64,13 @@
 						android:contentDescription="event_name"
 						android:id="@+id/event_name"
 						android:textColor="@color/cardview_light_background"
-						android:textSize="32dp"
-						android:gravity="left"/>
+						android:textSize="35dp"
+						android:gravity="left"
+						android:shadowColor="#f99245"
+						android:shadowDx="-4"
+						android:shadowDy="-4"
+						android:shadowRadius="1"
+						/>
 
 					<TextView
 						android:layout_margin="10dp"
@@ -51,9 +80,14 @@
 						android:fontFamily="sans-serif-thin"
 						android:contentDescription="event_type"
 						android:id="@+id/event_type"
-						android:textSize="32dp"
+						android:textSize="35dp"
 						android:gravity="right"
-						android:textColor="@color/cardview_light_background"/>
+						android:textColor="@color/cardview_light_background"
+						android:shadowColor="#f99245"
+						android:shadowDx="-4"
+						android:shadowDy="-4"
+						android:shadowRadius="1"
+						/>
 
 				</TableRow>
 			</TableLayout>
@@ -63,11 +97,11 @@
 				android:layout_marginHorizontal="10dp"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:fontFamily="sans-serif"
+				android:fontFamily="@font/kg"
 				android:contentDescription="event_description"
 				android:textColor="@color/cardview_light_background"
 				android:id="@+id/event_description"
-				android:textSize="16dp"
+				android:textSize="24dp"
 				android:gravity="center"/>
 
 			<TextView
@@ -79,20 +113,25 @@
 				android:textColor="@color/cardview_light_background"
 				android:contentDescription="event_rules"
 				android:id="@+id/event_rules"
-				android:textSize="32dp"
+				android:textSize="35dp"
 				android:gravity="left"
-				android:text="Rules"/>
+				android:text="RULES"
+				android:shadowColor="#f99245"
+				android:shadowDx="-3"
+				android:shadowDy="-3"
+				android:shadowRadius="1"
+				android:layout_marginLeft="45dp"/>
 
 			<TextView
 				android:layout_marginTop="5dp"
 				android:layout_marginHorizontal="10dp"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:fontFamily="sans-serif-bold"
+				android:fontFamily="@font/kg"
 				android:textColor="@color/cardview_light_background"
 				android:contentDescription="event_rules_content"
 				android:id="@+id/event_rules_content"
-				android:textSize="16dp"
+				android:textSize="24dp"
 				android:gravity="center"/>
 
 			<TextView
@@ -104,20 +143,29 @@
 				android:textColor="@color/cardview_light_background"
 				android:contentDescription="event_contact"
 				android:id="@+id/event_contact"
-				android:textSize="32dp"
+				android:textSize="35dp"
 				android:gravity="left"
-				android:text="Contact"/>
+				android:text="CONTACT"
+				android:shadowColor="#f99245"
+				android:shadowDx="-3"
+				android:shadowDy="-3"
+				android:shadowRadius="1"
+				android:layout_marginLeft="45dp"/>
 
 			<TextView
 				android:layout_marginTop="5dp"
 				android:layout_marginHorizontal="10dp"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:fontFamily="sans-serif-bold"
+				android:fontFamily="@font/kg"
 				android:textColor="@color/cardview_light_background"
 				android:contentDescription="event_contact_content"
 				android:id="@+id/event_contact_content"
-				android:textSize="16dp"
+				android:textSize="28dp"
+				android:shadowColor="#f99245"
+				android:shadowDx="-3"
+				android:shadowDy="-3"
+				android:shadowRadius="1"
 				android:gravity="center"/>
 
 			<Button

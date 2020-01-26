@@ -2,6 +2,14 @@ package in.srijanju.androidapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,7 +37,8 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 	private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
 	private static final String VIDEO_ID= "7oAc0d_W8-k";
 	String[] values = new String[] { "Rishav Kumar$IT 3rd Year","Gaurav Damani$IT 3rd Year","Rishav Agarwal$IT 4th Year","Himanshu Daga$IT 4th Year"};
-	Integer[] imgids = {R.drawable.rishavdp,R.drawable.avenger,R.drawable.ccjusl_logo,R.drawable.campusambassador};
+	Integer[] imgids = {R.drawable.rishavdp,R.drawable.gauravdp
+			,R.drawable.rishavbhaiya,R.drawable.himanshubhaiya};
 	YouTubePlayerView playerView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +120,7 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 			this.context = context;
 			this.values = values;
 		}
+
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {

@@ -219,9 +219,16 @@
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_gallery"
 		android:scaleType="fitStart"
+<<<<<<< HEAD
 		android:scaleX="0.5"
 		android:scaleY="0.5"
 		android:src="@drawable/gallerywhite"
+=======
+		android:scaleX="0.46"
+		android:scaleY="0.46"
+		android:paddingLeft="25dp"
+		android:src="@drawable/campusambassador"
+>>>>>>> 837ff1518272a6fe4a2b8608b717aa9b4c2b8545
 		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
 		app:layout_constraintEnd_toEndOf="@id/iv_ca"
 		app:layout_constraintStart_toStartOf="@+id/iv_sponsor"
