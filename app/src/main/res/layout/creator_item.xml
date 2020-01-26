@@ -14,7 +14,8 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_gravity="center_vertical"
-        android:gravity="center" />
+        android:gravity="center"
+        android:scaleType="centerCrop"/>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -28,18 +29,17 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
             android:fontFamily="serif-medium"
-            android:maxLines="1"
             android:textAllCaps="true"
             android:textSize="18sp"
+            android:textColor="#ffffff"
             tools:text="Rishav Kumar" />
 
         <TextView
             android:id="@+id/dept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
+            android:textColor="#ffffff"
             android:textSize="16sp"
             tools:text="IT 3rd Year" />
     </LinearLayout>

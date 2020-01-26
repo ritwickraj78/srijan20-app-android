@@ -215,6 +215,7 @@
 				android:layout_below="@+id/srijanText">
 
 				<ImageView
+					android:id="@+id/JU_official"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="8dp"
@@ -223,6 +224,7 @@
 					android:src="@drawable/ju_logo" />
 
 				<ImageView
+					android:id="@+id/CC_official"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="8dp"
@@ -231,6 +233,7 @@
 					android:src="@drawable/ccjusl_logo" />
 
 				<ImageView
+					android:id="@+id/GS_official"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="8dp"
@@ -239,6 +242,7 @@
 					android:src="@drawable/ju_game_society_logo" />
 
 				<ImageView
+					android:id="@+id/SC_official"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="8dp"
@@ -253,7 +257,15 @@
 				android:layout_below="@+id/clubsInfo"
 				android:layout_margin="8dp"
 				android:orientation="vertical">
-				<view class="androidx.appcompat.app.AlertController$RecycleListView"
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="App Developed By: "
+					android:textColor="#ffffff"
+					android:textSize="33dp"
+					android:fontFamily="@font/payback"
+					/>
+				<LinearLayout
 					android:id="@+id/creatorsList"
 					android:orientation="vertical"
 					android:layout_width="match_parent"
