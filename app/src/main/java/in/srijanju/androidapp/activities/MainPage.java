@@ -18,7 +18,7 @@ import java.util.TimerTask;
 
 import in.srijanju.androidapp.R;
 
-public class MainPage extends AppCompatActivity {
+public class 	MainPage extends AppCompatActivity {
 	private TextView a;
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
