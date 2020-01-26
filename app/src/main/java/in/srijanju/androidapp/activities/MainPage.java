@@ -70,6 +70,14 @@ public class MainPage extends AppCompatActivity {
 				startActivity(new Intent(MainPage.this, About.class));
 			}
 		});
+
+		ImageView ivEvents = findViewById(R.id.iv_events);
+		ivEvents.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainPage.this, Events.class));
+			}
+		});
 	}
 
 	private void setText(final TextView text, final String value) {

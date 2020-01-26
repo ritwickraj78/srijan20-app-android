@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/mp_background"
+	tools:context=".activities.Events">
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/srijan_circles"
+		android:scaleX="1.2"
+		android:scaleY="1.2"
+		android:src="@drawable/mp_circles_center"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/event_black_overlay"
+		android:scaleY="1.2"
+		android:src="@drawable/event_black_overlay"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_events"
+		android:src="@drawable/events_back_border"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_events"
+		android:scaleX="0.7"
+		android:scaleY="0.7"
+		android:src="@drawable/events_back"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/tv_events"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="14dp"
+		android:fontFamily="sans-serif-thin"
+		android:gravity="center"
+		android:text="@string/main_page_events"
+		android:textColor="@android:color/black"
+		android:textSize="48sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<GridView
+		android:id="@+id/gv_events"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:horizontalSpacing="10dp"
+		android:numColumns="auto_fit"
+		android:padding="24dp"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="10dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tv_events" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

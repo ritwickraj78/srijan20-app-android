@@ -24,4 +24,6 @@
 	<string name="main_page_gallery_written">Gallery written</string>
 	<string name="main_page_timer_background">Timer background</string>
 	<string name="main_page_profile_circle">Profile Circle</string>
+	<string name="event_black_overlay">Event black overlay</string>
+	<string name="event_icon_background">Event icon background</string>
 </resources>

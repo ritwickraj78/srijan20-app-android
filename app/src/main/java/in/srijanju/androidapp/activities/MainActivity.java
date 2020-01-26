@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import in.srijanju.androidapp.R;
 import in.srijanju.androidapp.utils.Screen;
 
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void run() {
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(1500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} finally {
