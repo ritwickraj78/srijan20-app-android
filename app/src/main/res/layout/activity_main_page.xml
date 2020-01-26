@@ -186,6 +186,7 @@
 		app:layout_constraintTop_toBottomOf="@id/options3" />
 
 	<ImageView
+		android:id="@+id/iv_sponsor"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_sponsor"
@@ -199,20 +200,7 @@
 		app:layout_constraintTop_toBottomOf="@id/bottomline" />
 
 	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_gallery"
-		android:scaleType="fitStart"
-		android:scaleX="0.5"
-		android:scaleY="0.5"
-		android:src="@drawable/gallerywhite"
-		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
-		app:layout_constraintEnd_toEndOf="@id/line2"
-		app:layout_constraintStart_toStartOf="@+id/line1"
-		app:layout_constraintTop_toBottomOf="@id/bottomline" />
-
-
-	<ImageView
+		android:id="@+id/iv_ca"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/main_page_ambassador"
@@ -223,6 +211,20 @@
 		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
 		app:layout_constraintEnd_toEndOf="@id/line3"
 		app:layout_constraintStart_toStartOf="@+id/line2"
+		app:layout_constraintTop_toBottomOf="@id/bottomline" />
+
+	<ImageView
+		android:id="@+id/iv_gallery"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_gallery"
+		android:scaleType="fitStart"
+		android:scaleX="0.5"
+		android:scaleY="0.5"
+		android:src="@drawable/gallerywhite"
+		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
+		app:layout_constraintEnd_toEndOf="@id/iv_ca"
+		app:layout_constraintStart_toStartOf="@+id/iv_sponsor"
 		app:layout_constraintTop_toBottomOf="@id/bottomline" />
 
 	<androidx.constraintlayout.widget.Guideline
@@ -275,6 +277,18 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/options2" />
+
+	<ImageView
+		android:id="@+id/iv_scan_qr"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_marginTop="4dp"
+		android:background="@drawable/mp_circles_center"
+		android:contentDescription="@string/scan_qr_code"
+		android:src="@drawable/srijan_qr"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/iv_events" />
 
 	<!--
 	<LinearLayout
