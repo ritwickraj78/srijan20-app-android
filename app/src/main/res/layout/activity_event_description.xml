@@ -4,6 +4,138 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@drawable/mp_background"
 	tools:context=".activities.EventDescription">
 
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical" >
+
+			<ImageView
+				android:id="@+id/poster"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:contentDescription="poster"
+				android:scaleType="fitXY" />
+
+			<TableLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TableRow
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" >
+
+					<TextView
+						android:layout_margin="10dp"
+						android:layout_height="wrap_content"
+						android:layout_width="0dp"
+						android:layout_weight="2"
+						android:fontFamily="sans-serif-thin"
+						android:contentDescription="event_name"
+						android:id="@+id/event_name"
+						android:textColor="@color/cardview_light_background"
+						android:textSize="32dp"
+						android:gravity="left"/>
+
+					<TextView
+						android:layout_margin="10dp"
+						android:layout_height="wrap_content"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:fontFamily="sans-serif-thin"
+						android:contentDescription="event_type"
+						android:id="@+id/event_type"
+						android:textSize="32dp"
+						android:gravity="right"
+						android:textColor="@color/cardview_light_background"/>
+
+				</TableRow>
+			</TableLayout>
+
+			<TextView
+				android:layout_marginTop="5dp"
+				android:layout_marginHorizontal="10dp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:fontFamily="sans-serif"
+				android:contentDescription="event_description"
+				android:textColor="@color/cardview_light_background"
+				android:id="@+id/event_description"
+				android:textSize="16dp"
+				android:gravity="center"/>
+
+			<TextView
+				android:layout_marginTop="5dp"
+				android:layout_marginHorizontal="10dp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:fontFamily="sans-serif-bold"
+				android:textColor="@color/cardview_light_background"
+				android:contentDescription="event_rules"
+				android:id="@+id/event_rules"
+				android:textSize="32dp"
+				android:gravity="left"
+				android:text="Rules"/>
+
+			<TextView
+				android:layout_marginTop="5dp"
+				android:layout_marginHorizontal="10dp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:fontFamily="sans-serif-bold"
+				android:textColor="@color/cardview_light_background"
+				android:contentDescription="event_rules_content"
+				android:id="@+id/event_rules_content"
+				android:textSize="16dp"
+				android:gravity="center"/>
+
+			<TextView
+				android:layout_marginTop="5dp"
+				android:layout_marginHorizontal="10dp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:fontFamily="sans-serif-bold"
+				android:textColor="@color/cardview_light_background"
+				android:contentDescription="event_contact"
+				android:id="@+id/event_contact"
+				android:textSize="32dp"
+				android:gravity="left"
+				android:text="Contact"/>
+
+			<TextView
+				android:layout_marginTop="5dp"
+				android:layout_marginHorizontal="10dp"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:fontFamily="sans-serif-bold"
+				android:textColor="@color/cardview_light_background"
+				android:contentDescription="event_contact_content"
+				android:id="@+id/event_contact_content"
+				android:textSize="16dp"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_margin="15dp"
+				android:padding="10dp"
+				android:id="@+id/button"
+				android:background="@drawable/btn_register"
+				android:fontFamily="sans-serif-bold"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAllCaps="false"
+				android:layout_gravity="center"
+				android:contentDescription="register button"
+				android:text="Register"
+				android:textSize="25dp"
+				/>
+
+
+		</LinearLayout>
+	</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
