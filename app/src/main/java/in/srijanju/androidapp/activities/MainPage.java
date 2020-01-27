@@ -155,41 +155,42 @@ public class MainPage extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 			Bundle extras = data.getExtras();
 			Bitmap imageBitmap = (Bitmap) extras.get("data");
 			FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(imageBitmap);
 			FirebaseVisionBarcodeDetector detector = FirebaseVision.getInstance()
-				.getVisionBarcodeDetector();
+					.getVisionBarcodeDetector();
 			detector.detectInImage(image)
-				.addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
-					@Override
-					public void onSuccess(List<FirebaseVisionBarcode> barcodes) {
-						boolean flag = false;
-						for (FirebaseVisionBarcode barcode : barcodes) {
-							int valueType = barcode.getValueType();
-							// See API reference for complete list of supported types
-							if (valueType == FirebaseVisionBarcode.TYPE_URL) {
-								flag = true;
-								String title = barcode.getUrl().getTitle();
-								String url = barcode.getUrl().getUrl();
-								Toast.makeText(getApplicationContext(), "Redirecting to " + url,
-									Toast.LENGTH_SHORT).show();
-								Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-								startActivity(browserIntent);
-								break;
+					.addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
+						@Override
+						public void onSuccess(List<FirebaseVisionBarcode> barcodes) {
+							boolean flag = false;
+							for (FirebaseVisionBarcode barcode : barcodes) {
+								int valueType = barcode.getValueType();
+								// See API reference for complete list of supported types
+								if (valueType == FirebaseVisionBarcode.TYPE_URL) {
+									flag = true;
+									String title = barcode.getUrl().getTitle();
+									String url = barcode.getUrl().getUrl();
+									Toast.makeText(getApplicationContext(), "Redirecting to " + url,
+											Toast.LENGTH_SHORT).show();
+									Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+									startActivity(browserIntent);
+									break;
+								}
 							}
+							if (!flag)
+								Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
 						}
-						if (!flag)
+					})
+					.addOnFailureListener(new OnFailureListener() {
+						@Override
+						public void onFailure(@NonNull Exception e) {
 							Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
-					}
-				})
-				.addOnFailureListener(new OnFailureListener() {
-					@Override
-					public void onFailure(@NonNull Exception e) {
-						Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
-					}
-				});
+						}
+					});
 		} else Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
 	}
 }
