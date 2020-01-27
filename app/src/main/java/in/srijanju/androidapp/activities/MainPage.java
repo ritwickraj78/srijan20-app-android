@@ -131,6 +131,14 @@ public class MainPage extends AppCompatActivity {
 			}
 		});
 
+		ImageView gallery=findViewById(R.id.iv_gallery);
+		gallery.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainPage.this, Gallery.class));
+			}
+		});
+
 		ivScanQr = findViewById(R.id.iv_scan_qr);
 		ivScanQr.setOnClickListener(new View.OnClickListener() {
 			@Override

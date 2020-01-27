@@ -32,7 +32,7 @@ import java.util.List;
 
 import in.srijanju.androidapp.R;
 
-public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class 	About extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 	private static final String srijanAbt = "SRIJAN has always dedicated itself to the idea of promoting, showcasing, and encouraging concepts and research beyond the known periphery. SRIJAN is not just a fest for us. It is a Religion.";
 	private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
 	private static final String VIDEO_ID= "7oAc0d_W8-k";
