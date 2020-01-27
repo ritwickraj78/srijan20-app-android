@@ -3,6 +3,7 @@ package in.srijanju.androidapp.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -119,6 +120,14 @@ public class MainPage extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(MainPage.this, Events.class));
+			}
+		});
+
+		ImageView ambassador=findViewById(R.id.iv_ca);
+		ambassador.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainPage.this, Ambassador.class));
 			}
 		});
 

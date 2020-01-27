@@ -225,7 +225,7 @@
 		android:scaleType="fitStart"
 		android:scaleX="0.46"
 		android:scaleY="0.46"
-		android:src="@drawable/campusambassador"
+		android:src="@drawable/gallerywhite"
 		app:layout_constraintBottom_toTopOf="@+id/bottommostline"
 		app:layout_constraintEnd_toEndOf="@id/iv_ca"
 		app:layout_constraintStart_toStartOf="@+id/iv_sponsor"
