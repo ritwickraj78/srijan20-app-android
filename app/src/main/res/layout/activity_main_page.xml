@@ -116,7 +116,11 @@
 		android:textSize="35sp"
 		app:layout_constraintBottom_toTopOf="@+id/iv_about"
 		app:layout_constraintStart_toStartOf="@+id/line0"
-		app:layout_constraintTop_toBottomOf="@+id/g_top_right2" />
+		app:layout_constraintTop_toBottomOf="@+id/g_top_right2"
+		android:shadowColor="#f99245"
+		android:shadowDx="-3"
+		android:shadowDy="-3"
+		android:shadowRadius="1"/>
 
 
 	<androidx.constraintlayout.widget.Guideline
