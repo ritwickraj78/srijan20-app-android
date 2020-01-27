@@ -26,4 +26,5 @@
 	<string name="main_page_profile_circle">Profile Circle</string>
 	<string name="event_black_overlay">Event black overlay</string>
 	<string name="event_icon_background">Event icon background</string>
+	<string name="scan_qr_code">Scan qr code</string>
 </resources>
