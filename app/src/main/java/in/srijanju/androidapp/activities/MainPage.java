@@ -53,13 +53,14 @@ public class MainPage extends AppCompatActivity {
 		thatDay.set(Calendar.DAY_OF_MONTH, 5);
 		thatDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
 		thatDay.set(Calendar.YEAR, 2020);
+		thatDay.set(Calendar.HOUR_OF_DAY, 0);
 
 		final Calendar lastDay = Calendar.getInstance();
 		lastDay.setTime(new Date(0)); /* reset */
 		lastDay.set(Calendar.DAY_OF_MONTH, 9);
 		lastDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
 		lastDay.set(Calendar.YEAR, 2020);
-
+		thatDay.set(Calendar.HOUR_OF_DAY, 0);
 
 		final int SECONDS_IN_A_DAY = 24 * 60 * 60;
 		Timer t = new Timer();
