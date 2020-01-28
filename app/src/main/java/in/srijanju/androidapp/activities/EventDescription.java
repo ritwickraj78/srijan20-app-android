@@ -1,11 +1,12 @@
 package in.srijanju.androidapp.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +22,7 @@ public class EventDescription extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event_description);
 
-		SrijanEvent event = (SrijanEvent) getIntent().getExtras().getSerializable("event");
+		final SrijanEvent event = (SrijanEvent) getIntent().getExtras().getSerializable("event");
 		// Refer to Srijan Event class for the parameters
 
 		ImageView poster = findViewById(R.id.poster);
@@ -41,7 +42,11 @@ public class EventDescription extends AppCompatActivity {
 
 		register.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(EventDescription.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent();
+				intent.setAction(Intent.ACTION_VIEW);
+				intent.addCategory(Intent.CATEGORY_BROWSABLE);
+				intent.setData(Uri.parse(event.url));
+				startActivity(intent);
 			}
 		});
 

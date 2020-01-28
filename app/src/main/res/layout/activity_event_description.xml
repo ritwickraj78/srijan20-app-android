@@ -60,8 +60,7 @@
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
 						android:layout_margin="10dp"
-						android:layout_weight="2"
-						android:contentDescription="event_name"
+						android:layout_weight="5"
 						android:fontFamily="sans-serif-thin"
 						android:gravity="start"
 						android:shadowColor="#f99245"
@@ -69,15 +68,14 @@
 						android:shadowDy="-4"
 						android:shadowRadius="1"
 						android:textColor="@color/cardview_light_background"
-						android:textSize="35sp" />
+						android:textSize="30sp" />
 
 					<TextView
 						android:id="@+id/event_type"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
 						android:layout_margin="10dp"
-						android:layout_weight="1"
-						android:contentDescription="event_type"
+						android:layout_weight="3"
 						android:fontFamily="sans-serif-thin"
 						android:gravity="right"
 						android:shadowColor="#f99245"
@@ -85,7 +83,7 @@
 						android:shadowDy="-4"
 						android:shadowRadius="1"
 						android:textColor="@color/cardview_light_background"
-						android:textSize="35dp" />
+						android:textSize="20sp" />
 
 				</TableRow>
 			</TableLayout>
@@ -94,69 +92,68 @@
 				android:id="@+id/event_description"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginHorizontal="10dp"
+				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
-				android:contentDescription="event_description"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="@font/kg"
 				android:gravity="center"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="24dp" />
+				android:textSize="24sp" />
 
 			<TextView
 				android:id="@+id/event_rules"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginHorizontal="10dp"
-				android:layout_marginLeft="45dp"
+				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
-				android:contentDescription="event_rules"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="sans-serif-bold"
-				android:gravity="left"
+				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
 				android:text="RULES"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="35dp" />
+				android:textSize="32sp" />
 
 			<TextView
 				android:id="@+id/event_rules_content"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginHorizontal="10dp"
+				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
-				android:contentDescription="event_rules_content"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="@font/kg"
 				android:gravity="center"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="24dp" />
+				android:textSize="24sp" />
 
 			<TextView
 				android:id="@+id/event_contact"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginHorizontal="10dp"
-				android:layout_marginLeft="45dp"
+				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
-				android:contentDescription="event_contact"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="sans-serif-bold"
-				android:gravity="left"
+				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
 				android:text="CONTACT"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="35dp" />
+				android:textSize="32sp" />
 
 			<TextView
 				android:id="@+id/event_contact_content"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginHorizontal="10dp"
+				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
-				android:contentDescription="event_contact_content"
+				android:layout_marginEnd="10dp"
+				android:autoLink="phone"
 				android:fontFamily="@font/kg"
 				android:gravity="center"
 				android:shadowColor="#f99245"
@@ -164,7 +161,8 @@
 				android:shadowDy="-3"
 				android:shadowRadius="1"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="28dp" />
+				android:textColorLink="#fff"
+				android:textSize="28sp" />
 
 			<Button
 				android:id="@+id/button"
@@ -173,14 +171,11 @@
 				android:layout_gravity="center"
 				android:layout_margin="15dp"
 				android:background="@drawable/btn_register"
-				android:contentDescription="register button"
 				android:fontFamily="sans-serif-bold"
 				android:padding="10dp"
 				android:text="Register"
 				android:textAllCaps="false"
-				android:textSize="25dp" />
-
-
+				android:textSize="24sp" />
 		</LinearLayout>
 	</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
