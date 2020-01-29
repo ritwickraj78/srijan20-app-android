@@ -38,7 +38,7 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="vertical" >
+			android:orientation="vertical">
 
 			<ImageView
 				android:id="@+id/poster"
@@ -53,137 +53,129 @@
 
 				<TableRow
 					android:layout_width="match_parent"
-					android:layout_height="wrap_content" >
+					android:layout_height="wrap_content">
 
 					<TextView
-						android:layout_margin="10dp"
-						android:layout_height="wrap_content"
-						android:layout_width="0dp"
-						android:layout_weight="2"
-						android:fontFamily="sans-serif-thin"
-						android:contentDescription="event_name"
 						android:id="@+id/event_name"
-						android:textColor="@color/cardview_light_background"
-						android:textSize="35dp"
-						android:gravity="left"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:layout_weight="5"
+						android:fontFamily="sans-serif-thin"
+						android:gravity="start"
 						android:shadowColor="#f99245"
 						android:shadowDx="-4"
 						android:shadowDy="-4"
 						android:shadowRadius="1"
-						/>
+						android:textColor="@color/cardview_light_background"
+						android:textSize="30sp" />
 
 					<TextView
-						android:layout_margin="10dp"
-						android:layout_height="wrap_content"
-						android:layout_width="0dp"
-						android:layout_weight="1"
-						android:fontFamily="sans-serif-thin"
-						android:contentDescription="event_type"
 						android:id="@+id/event_type"
-						android:textSize="35dp"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_margin="10dp"
+						android:layout_weight="3"
+						android:fontFamily="sans-serif-thin"
 						android:gravity="right"
-						android:textColor="@color/cardview_light_background"
 						android:shadowColor="#f99245"
 						android:shadowDx="-4"
 						android:shadowDy="-4"
 						android:shadowRadius="1"
-						/>
+						android:textColor="@color/cardview_light_background"
+						android:textSize="20sp" />
 
 				</TableRow>
 			</TableLayout>
 
 			<TextView
-				android:layout_marginTop="5dp"
-				android:layout_marginHorizontal="10dp"
-				android:layout_height="wrap_content"
-				android:layout_width="match_parent"
-				android:fontFamily="@font/kg"
-				android:contentDescription="event_description"
-				android:textColor="@color/cardview_light_background"
 				android:id="@+id/event_description"
-				android:textSize="24dp"
-				android:gravity="center"/>
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginEnd="10dp"
+				android:fontFamily="@font/kg"
+				android:gravity="center"
+				android:textColor="@color/cardview_light_background"
+				android:textSize="24sp" />
 
 			<TextView
-				android:layout_marginTop="5dp"
-				android:layout_marginHorizontal="10dp"
-				android:layout_height="wrap_content"
-				android:layout_width="match_parent"
-				android:fontFamily="sans-serif-bold"
-				android:textColor="@color/cardview_light_background"
-				android:contentDescription="event_rules"
 				android:id="@+id/event_rules"
-				android:textSize="35dp"
-				android:gravity="left"
-				android:text="RULES"
-				android:shadowColor="#f99245"
-				android:shadowDx="-3"
-				android:shadowDy="-3"
-				android:shadowRadius="1"
-				android:layout_marginLeft="45dp"/>
-
-			<TextView
-				android:layout_marginTop="5dp"
-				android:layout_marginHorizontal="10dp"
-				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:fontFamily="@font/kg"
-				android:textColor="@color/cardview_light_background"
-				android:contentDescription="event_rules_content"
-				android:id="@+id/event_rules_content"
-				android:textSize="24dp"
-				android:gravity="center"/>
-
-			<TextView
-				android:layout_marginTop="5dp"
-				android:layout_marginHorizontal="10dp"
 				android:layout_height="wrap_content"
-				android:layout_width="match_parent"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="sans-serif-bold"
-				android:textColor="@color/cardview_light_background"
-				android:contentDescription="event_contact"
-				android:id="@+id/event_contact"
-				android:textSize="35dp"
-				android:gravity="left"
-				android:text="CONTACT"
+				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
-				android:layout_marginLeft="45dp"/>
+				android:text="RULES"
+				android:textColor="@color/cardview_light_background"
+				android:textSize="32sp" />
 
 			<TextView
-				android:layout_marginTop="5dp"
-				android:layout_marginHorizontal="10dp"
-				android:layout_height="wrap_content"
+				android:id="@+id/event_rules_content"
 				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginEnd="10dp"
 				android:fontFamily="@font/kg"
+				android:gravity="center"
 				android:textColor="@color/cardview_light_background"
-				android:contentDescription="event_contact_content"
-				android:id="@+id/event_contact_content"
-				android:textSize="28dp"
+				android:textSize="24sp" />
+
+			<TextView
+				android:id="@+id/event_contact"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginEnd="10dp"
+				android:fontFamily="sans-serif-bold"
+				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
-				android:gravity="center"/>
+				android:text="CONTACT"
+				android:textColor="@color/cardview_light_background"
+				android:textSize="32sp" />
+
+			<TextView
+				android:id="@+id/event_contact_content"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginEnd="10dp"
+				android:autoLink="phone"
+				android:fontFamily="@font/kg"
+				android:gravity="center"
+				android:shadowColor="#f99245"
+				android:shadowDx="-3"
+				android:shadowDy="-3"
+				android:shadowRadius="1"
+				android:textColor="@color/cardview_light_background"
+				android:textColorLink="#fff"
+				android:textSize="28sp" />
 
 			<Button
-				android:layout_margin="15dp"
-				android:padding="10dp"
 				android:id="@+id/button"
-				android:background="@drawable/btn_register"
-				android:fontFamily="sans-serif-bold"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textAllCaps="false"
 				android:layout_gravity="center"
-				android:contentDescription="register button"
+				android:layout_margin="15dp"
+				android:background="@drawable/btn_register"
+				android:fontFamily="sans-serif-bold"
+				android:padding="10dp"
 				android:text="Register"
-				android:textSize="25dp"
-				/>
-
-
+				android:textAllCaps="false"
+				android:textSize="24sp" />
 		</LinearLayout>
 	</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

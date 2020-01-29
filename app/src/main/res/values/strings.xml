@@ -27,4 +27,6 @@
 	<string name="event_black_overlay">Event black overlay</string>
 	<string name="event_icon_background">Event icon background</string>
 	<string name="scan_qr_code">Scan qr code</string>
+	<string name="campus_ambassador_poster">Campus ambassador poster</string>
+	<string name="campus_ambassador">Campus ambassador</string>
 </resources>

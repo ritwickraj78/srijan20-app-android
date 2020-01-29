@@ -1,12 +1,12 @@
 package in.srijanju.androidapp.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,11 +22,8 @@ public class EventDescription extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event_description);
 
-		SrijanEvent event = (SrijanEvent) getIntent().getExtras().getSerializable("event");
-
+		final SrijanEvent event = (SrijanEvent) getIntent().getExtras().getSerializable("event");
 		// Refer to Srijan Event class for the parameters
-
-		Log.i("event", String.valueOf(event));
 
 		ImageView poster = findViewById(R.id.poster);
 		TextView event_name = findViewById(R.id.event_name);
@@ -34,7 +31,7 @@ public class EventDescription extends AppCompatActivity {
 		TextView event_desc = findViewById(R.id.event_description);
 		TextView event_rules = findViewById(R.id.event_rules_content);
 		TextView event_contact = findViewById(R.id.event_contact_content);
-		Button register = (Button) findViewById(R.id.button);
+		Button register = findViewById(R.id.button);
 
 		Glide.with(this).load(event.poster).into(poster);
 		event_name.setText(event.name);
@@ -45,7 +42,11 @@ public class EventDescription extends AppCompatActivity {
 
 		register.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(EventDescription.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent();
+				intent.setAction(Intent.ACTION_VIEW);
+				intent.addCategory(Intent.CATEGORY_BROWSABLE);
+				intent.setData(Uri.parse(event.url));
+				startActivity(intent);
 			}
 		});
 

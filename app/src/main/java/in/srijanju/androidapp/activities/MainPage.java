@@ -3,7 +3,6 @@ package in.srijanju.androidapp.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetector;
-import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetectorOptions;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 
 import java.util.Calendar;
@@ -35,10 +33,7 @@ import in.srijanju.androidapp.R;
 
 public class MainPage extends AppCompatActivity {
 	public static final int REQUEST_IMAGE_CAPTURE = 101;
-	FirebaseVisionBarcodeDetectorOptions options = new FirebaseVisionBarcodeDetectorOptions.Builder()
-		.setBarcodeFormats(FirebaseVisionBarcode.FORMAT_QR_CODE).build();
 	private TextView a;
-	private ImageView ivScanQr;
 
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
@@ -58,13 +53,14 @@ public class MainPage extends AppCompatActivity {
 		thatDay.set(Calendar.DAY_OF_MONTH, 5);
 		thatDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
 		thatDay.set(Calendar.YEAR, 2020);
+		thatDay.set(Calendar.HOUR_OF_DAY, 0);
 
 		final Calendar lastDay = Calendar.getInstance();
 		lastDay.setTime(new Date(0)); /* reset */
 		lastDay.set(Calendar.DAY_OF_MONTH, 9);
 		lastDay.set(Calendar.MONTH, 2); // 0-11 so 1 less
 		lastDay.set(Calendar.YEAR, 2020);
-
+		thatDay.set(Calendar.HOUR_OF_DAY, 0);
 
 		final int SECONDS_IN_A_DAY = 24 * 60 * 60;
 		Timer t = new Timer();
@@ -123,7 +119,7 @@ public class MainPage extends AppCompatActivity {
 			}
 		});
 
-		ImageView ambassador=findViewById(R.id.iv_ca);
+		ImageView ambassador = findViewById(R.id.iv_ca);
 		ambassador.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -131,7 +127,7 @@ public class MainPage extends AppCompatActivity {
 			}
 		});
 
-		ImageView gallery=findViewById(R.id.iv_gallery);
+		ImageView gallery = findViewById(R.id.iv_gallery);
 		gallery.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -139,7 +135,16 @@ public class MainPage extends AppCompatActivity {
 			}
 		});
 
-		ivScanQr = findViewById(R.id.iv_scan_qr);
+		ImageView ivSponsor = findViewById(R.id.iv_sponsor);
+		ivSponsor.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO: Complete Sponsor page
+				Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+			}
+		});
+
+		ImageView ivScanQr = findViewById(R.id.iv_scan_qr);
 		ivScanQr.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -169,36 +174,36 @@ public class MainPage extends AppCompatActivity {
 			Bitmap imageBitmap = (Bitmap) extras.get("data");
 			FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(imageBitmap);
 			FirebaseVisionBarcodeDetector detector = FirebaseVision.getInstance()
-					.getVisionBarcodeDetector();
+				.getVisionBarcodeDetector();
 			detector.detectInImage(image)
-					.addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
-						@Override
-						public void onSuccess(List<FirebaseVisionBarcode> barcodes) {
-							boolean flag = false;
-							for (FirebaseVisionBarcode barcode : barcodes) {
-								int valueType = barcode.getValueType();
-								// See API reference for complete list of supported types
-								if (valueType == FirebaseVisionBarcode.TYPE_URL) {
-									flag = true;
-									String title = barcode.getUrl().getTitle();
-									String url = barcode.getUrl().getUrl();
-									Toast.makeText(getApplicationContext(), "Redirecting to " + url,
-											Toast.LENGTH_SHORT).show();
-									Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-									startActivity(browserIntent);
-									break;
-								}
+				.addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
+					@Override
+					public void onSuccess(List<FirebaseVisionBarcode> barcodes) {
+						boolean flag = false;
+						for (FirebaseVisionBarcode barcode : barcodes) {
+							int valueType = barcode.getValueType();
+							// See API reference for complete list of supported types
+							if (valueType == FirebaseVisionBarcode.TYPE_URL) {
+								flag = true;
+								String title = barcode.getUrl().getTitle();
+								String url = barcode.getUrl().getUrl();
+								Toast.makeText(getApplicationContext(), "Redirecting to " + url,
+									Toast.LENGTH_SHORT).show();
+								Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+								startActivity(browserIntent);
+								break;
 							}
-							if (!flag)
-								Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
 						}
-					})
-					.addOnFailureListener(new OnFailureListener() {
-						@Override
-						public void onFailure(@NonNull Exception e) {
+						if (!flag)
 							Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
-						}
-					});
+					}
+				})
+				.addOnFailureListener(new OnFailureListener() {
+					@Override
+					public void onFailure(@NonNull Exception e) {
+						Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
+					}
+				});
 		} else Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
 	}
 }
