@@ -8,80 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:614644848015:android:eb947e17dd276dbf29e7fa",
-        "android_client_info": {
-          "package_name": "app.srijanju.in.srijan_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "614644848015-2go0v2e4nedfph0ann5dbe0hod4niip0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "app.srijanju.in.srijan_app",
-            "certificate_hash": "f1c9acf552462785ae8a32ecd3a1062de636cb10"
-          }
-        },
-        {
-          "client_id": "614644848015-d3jjd1r51cho5oc81qbfa3poehpc2283.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "app.srijanju.in.srijan_app",
-            "certificate_hash": "21160e3b9bfd1537a5cbbbfa34abc2296bf1eebd"
-          }
-        },
-        {
-          "client_id": "614644848015-gmru82guia7bi02j243s1ljfkqgenvud.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "app.srijanju.in.srijan_app",
-            "certificate_hash": "55a0b09e122392be2b52c452c9fc40666b0c3309"
-          }
-        },
-        {
-          "client_id": "614644848015-jpcpqdh0592nae53jpavlp076qia93gb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "app.srijanju.in.srijan_app",
-            "certificate_hash": "6ae1d9fc3f03f6960acc979737bb5ca68b2c2e7e"
-          }
-        },
-        {
-          "client_id": "614644848015-ci0vn0p0g5st7u1t64jl29588qjm3ku1.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAAygELjzYszbGN3b7na4sLB5uMJqwCTvI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "614644848015-ci0vn0p0g5st7u1t64jl29588qjm3ku1.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "614644848015-nb86q94jekitj1j4n8jsindbjja9acgk.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "app.srijanju.in.srijanApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:614644848015:android:bda63c30e835ed1a29e7fa",
         "android_client_info": {
           "package_name": "in.srijanju.androidapp"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "614644848015-fkklcealo4rrpm93nc5mt55rvn06990i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.srijanju.androidapp",
+            "certificate_hash": "c82e00c7f0da072b8a1e558c513377f5c8f01ebe"
+          }
+        },
         {
           "client_id": "614644848015-fa7ui1e1rm3smc53boc4niopr5tv7l2h.apps.googleusercontent.com",
           "client_type": 1,
