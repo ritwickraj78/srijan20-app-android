@@ -29,4 +29,5 @@
 	<string name="scan_qr_code">Scan qr code</string>
 	<string name="campus_ambassador_poster">Campus ambassador poster</string>
 	<string name="campus_ambassador">Campus ambassador</string>
+	<string name="app_developed_by">App Developed By:</string>
 </resources>

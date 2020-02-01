@@ -96,8 +96,7 @@ public class MainPage extends AppCompatActivity {
 				}
 
 			}
-		}, 0, 1000);
-
+		}, 500, 1000*60*5);
 	}
 
 	private void initialise() {

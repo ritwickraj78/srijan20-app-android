@@ -2,51 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="?android:attr/listPreferredItemHeight"
+	android:layout_height="wrap_content"
 	android:orientation="horizontal"
 	android:paddingStart="16dp"
 	android:paddingLeft="16dp"
 	android:paddingEnd="16dp"
 	android:paddingRight="16dp">
 
-	<ImageView
-		android:id="@+id/profilepic"
-		android:layout_width="50dp"
-		android:layout_height="50dp"
-		android:layout_gravity="center_vertical"
-		android:gravity="center"
-		android:padding="2dp"
-		android:scaleType="centerCrop" />
-
-	<LinearLayout
-		android:layout_width="0dp"
+	<TextView
+		android:id="@+id/name"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center_vertical"
-		android:layout_marginStart="32dp"
-		android:layout_weight="1"
-		android:orientation="vertical">
-
-		<TextView
-			android:id="@+id/name"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:fontFamily="@font/kg"
-			android:shadowColor="#f99245"
-			android:shadowDx="-3"
-			android:shadowDy="-3"
-			android:shadowRadius="1"
-			android:textAllCaps="true"
-			android:textColor="#ffffff"
-			android:textSize="26sp"
-			tools:text="Rishav Kumar" />
-
-		<TextView
-			android:id="@+id/dept"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:fontFamily="@font/kg"
-			android:textColor="#ffffff"
-			android:textSize="20sp"
-			tools:text="IT 3rd Year" />
-	</LinearLayout>
+		android:fontFamily="@font/kg"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:shadowColor="#f99245"
+		android:shadowDx="-3"
+		android:shadowDy="-3"
+		android:shadowRadius="1"
+		android:textAllCaps="true"
+		android:textColor="#ffffff"
+		android:textSize="20sp"
+		tools:text="Rishav Kumar" />
 </LinearLayout>
