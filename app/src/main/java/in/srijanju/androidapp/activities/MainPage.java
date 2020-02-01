@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,6 +34,7 @@ import in.srijanju.androidapp.R;
 public class MainPage extends AppCompatActivity {
 	public static final int REQUEST_IMAGE_CAPTURE = 101;
 	private TextView a;
+	@RequiresApi(api = Build.VERSION_CODES.O)
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
