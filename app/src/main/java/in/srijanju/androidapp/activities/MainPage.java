@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,14 +34,15 @@ public class MainPage extends AppCompatActivity {
 	public static final int REQUEST_IMAGE_CAPTURE = 101;
 	private TextView a;
 
-	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
 		a = findViewById(R.id.timer);
-		Typeface myCustomFont = getResources().getFont(R.font.payback);
-		a.setTypeface(myCustomFont);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			Typeface myCustomFont = getResources().getFont(R.font.payback);
+			a.setTypeface(myCustomFont);
+		}
 		initialise();
 
 		/*
@@ -185,7 +185,6 @@ public class MainPage extends AppCompatActivity {
 							// See API reference for complete list of supported types
 							if (valueType == FirebaseVisionBarcode.TYPE_URL) {
 								flag = true;
-								String title = barcode.getUrl().getTitle();
 								String url = barcode.getUrl().getUrl();
 								Toast.makeText(getApplicationContext(), "Redirecting to " + url,
 									Toast.LENGTH_SHORT).show();
