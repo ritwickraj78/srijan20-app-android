@@ -27,7 +27,7 @@ public class Ambassador extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_page_circle_descriptors);
+		setContentView(R.layout.activity_ca);
 		TextView caText = findViewById(R.id.CA_text);
 		caText.setText(textVal);
 		Button apply = findViewById(R.id.CA_button);
