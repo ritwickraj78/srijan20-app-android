@@ -35,7 +35,7 @@ public class MainPage extends AppCompatActivity {
 	public static final int REQUEST_IMAGE_CAPTURE = 101;
 	private TextView a;
 
-	@RequiresApi(api = Build.VERSION_CODES.O)
+	//@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
