@@ -59,41 +59,54 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 		ImageView img1 = findViewById(R.id.JU_official);
 		img1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("http://www.jaduniv.edu.in"));
-				startActivity(intent);
+				startActivity(intent);*/
+
+				Intent myIntent = new Intent(About.this,webview.class);
+				myIntent.putExtra("url","http://www.jaduniv.edu.in");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img2 = findViewById(R.id.GS_official);
 		img2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/GamesSocietyJU/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this,webview.class);
+				myIntent.putExtra("url","https://www.facebook.com/GamesSocietyJU/");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img3 = findViewById(R.id.CC_official);
 		img3.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/JUCodeClub/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this,webview.class);
+				myIntent.putExtra("url","https://www.facebook.com/JUCodeClub/");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img4 = findViewById(R.id.SC_official);
 		img4.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/juscofficial/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this,webview.class);
+				myIntent.putExtra("url","https://www.facebook.com/juscofficial/");
+				startActivity(myIntent);
 			}
 		});
 	}

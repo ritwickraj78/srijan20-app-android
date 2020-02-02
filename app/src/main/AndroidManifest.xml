@@ -15,6 +15,7 @@
 		android:supportsRtl="true"
 		android:hardwareAccelerated="false"
 		android:largeHeap="true"
+		android:usesCleartextTraffic="true"
 		android:theme="@style/AppTheme">
 		<activity android:name=".activities.EventDescription"></activity>
 		<activity android:name=".activities.Events" />
@@ -22,6 +23,7 @@
 		<activity android:name=".activities.MainPage" />
 		<activity android:name=".activities.Gallery" />
 		<activity android:name=".activities.Ambassador" />
+		<activity android:name=".activities.webview"/>
 		<activity
 			android:name=".activities.MainActivity"
 			android:theme="@style/AppTheme">
@@ -32,5 +34,4 @@
 			</intent-filter>
 		</activity>
 	</application>
-
 </manifest>
