@@ -85,12 +85,16 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/srijanVid"
 				android:layout_marginStart="10dp"
-				android:fontFamily="@font/kg"
 				android:padding="8dp"
 				android:scaleX="1"
 				android:scaleY="1"
 				android:textColor="#ffffff"
-				android:textSize="26sp" />
+				android:textSize="20sp"
+				android:shadowDx="-1"
+				android:shadowDy="-1"
+				android:shadowColor="#f99245"
+				android:shadowRadius="1"
+				android:text="HELLO EVERYONE GOD BLESS MY FRIEDDFMSFSDV SF SDF DF DFVDSVSDVSDVDSVDSVDSVSDVSDV"/>
 
 			<LinearLayout
 				android:id="@+id/clubsInfo"
@@ -150,14 +154,15 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="25dp"
 					android:layout_marginBottom="15dp"
-					android:fontFamily="@font/payback"
 					android:shadowColor="#f99245"
 					android:shadowDx="-2"
 					android:shadowDy="-2"
+					android:textAllCaps="true"
+					android:textStyle="italic"
 					android:shadowRadius="1"
 					android:text="@string/app_developed_by"
 					android:textColor="#ffffff"
-					android:textSize="28sp" />
+					android:textSize="32sp" />
 
 				<LinearLayout
 					android:id="@+id/creatorsList"

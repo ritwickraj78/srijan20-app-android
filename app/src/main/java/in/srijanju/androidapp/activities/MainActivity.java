@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void run() {
 				// Sleep for 100ms and check if user is signed in
-				try {
+				/*try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}
+				}*/
 
 				// If user already signed in, start the app
 				if (FirebaseAuth.getInstance().getCurrentUser() != null) {
