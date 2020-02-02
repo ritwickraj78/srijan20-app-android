@@ -5,9 +5,7 @@
 	<uses-feature
 		android:name="android.hardware.camera"
 		android:required="false" />
-
 	<uses-permission android:name="android.permission.INTERNET" />
-
 	<application
 		android:name=".SrijanApp"
 		android:allowBackup="true"
@@ -17,14 +15,16 @@
 		android:largeHeap="true"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/AppTheme">
-		<activity android:name=".activities.SrijanRegister"></activity>
+		android:theme="@style/AppTheme"
+		android:usesCleartextTraffic="true">
+		<activity android:name=".activities.SrijanRegister" />
 		<activity android:name=".activities.EventDescription" />
 		<activity android:name=".activities.Events" />
 		<activity android:name=".activities.About" />
 		<activity android:name=".activities.MainPage" />
 		<activity android:name=".activities.Gallery" />
 		<activity android:name=".activities.Ambassador" />
+		<activity android:name=".activities.webview" />
 		<activity
 			android:name=".activities.MainActivity"
 			android:theme="@style/AppTheme">
@@ -35,5 +35,4 @@
 			</intent-filter>
 		</activity>
 	</application>
-
 </manifest>

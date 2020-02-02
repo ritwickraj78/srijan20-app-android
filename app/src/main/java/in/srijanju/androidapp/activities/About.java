@@ -2,7 +2,6 @@ package in.srijanju.androidapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,12 +26,10 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 	private static final String srijanAbt = "SRIJAN has always dedicated itself to the idea of " +
 		"promoting, showcasing, and encouraging concepts and research beyond the known periphery. " +
 		"SRIJAN is not just a fest for us. It is a Religion.";
-
-	String[] values = new String[]{"Rishav Kumar (IT 3rd Year)", "Gaurav Damani (IT 3rd Year)",
-		"Rishav Agarwal (IT 4th Year)", "Himanshu Daga (IT 4th Year)"};
-
 	private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
 	private static final String VIDEO_ID = "7oAc0d_W8-k";
+	String[] values = new String[]{"Rishav Kumar (IT 3rd Year)", "Gaurav Damani (IT 3rd Year)",
+		"Rishav Agarwal (IT 4th Year)", "Himanshu Daga (IT 4th Year)"};
 	YouTubePlayerView playerView;
 
 	@Override
@@ -59,41 +56,54 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 		ImageView img1 = findViewById(R.id.JU_official);
 		img1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("http://www.jaduniv.edu.in"));
-				startActivity(intent);
+				startActivity(intent);*/
+
+				Intent myIntent = new Intent(About.this, webview.class);
+				myIntent.putExtra("url", "http://www.jaduniv.edu.in");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img2 = findViewById(R.id.GS_official);
 		img2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/GamesSocietyJU/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this, webview.class);
+				myIntent.putExtra("url", "https://www.facebook.com/GamesSocietyJU/");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img3 = findViewById(R.id.CC_official);
 		img3.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/JUCodeClub/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this, webview.class);
+				myIntent.putExtra("url", "https://www.facebook.com/JUCodeClub/");
+				startActivity(myIntent);
 			}
 		});
 		ImageView img4 = findViewById(R.id.SC_official);
 		img4.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.addCategory(Intent.CATEGORY_BROWSABLE);
 				intent.setData(Uri.parse("https://www.facebook.com/juscofficial/"));
-				startActivity(intent);
+				startActivity(intent);*/
+				Intent myIntent = new Intent(About.this, webview.class);
+				myIntent.putExtra("url", "https://www.facebook.com/juscofficial/");
+				startActivity(myIntent);
 			}
 		});
 	}

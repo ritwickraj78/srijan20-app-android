@@ -1,7 +1,6 @@
 package in.srijanju.androidapp.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,11 +41,10 @@ public class EventDescription extends AppCompatActivity {
 
 		register.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.setAction(Intent.ACTION_VIEW);
-				intent.addCategory(Intent.CATEGORY_BROWSABLE);
-				intent.setData(Uri.parse(event.url));
-				startActivity(intent);
+
+				Intent myIntent = new Intent(EventDescription.this, webview.class);
+				myIntent.putExtra("url", event.url);
+				startActivity(myIntent);
 			}
 		});
 
