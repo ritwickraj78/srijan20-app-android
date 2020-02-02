@@ -34,6 +34,7 @@ import in.srijanju.androidapp.R;
 public class MainPage extends AppCompatActivity {
 	public static final int REQUEST_IMAGE_CAPTURE = 101;
 	private TextView a;
+
 	@RequiresApi(api = Build.VERSION_CODES.O)
 
 	@Override
@@ -98,7 +99,7 @@ public class MainPage extends AppCompatActivity {
 				}
 
 			}
-		}, 500, 1000*60*5);
+		}, 500, 1000 * 60 * 5);
 	}
 
 	private void initialise() {
@@ -194,8 +195,9 @@ public class MainPage extends AppCompatActivity {
 								break;
 							}
 						}
-						if (!flag)
+						if (!flag) {
 							Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_SHORT).show();
+						}
 					}
 				})
 				.addOnFailureListener(new OnFailureListener() {

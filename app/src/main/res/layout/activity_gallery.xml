@@ -5,7 +5,8 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/mp_background"
-	tools:context=".activities.Gallery">
+	tools:context=".activities.Gallery"
+	tools:ignore="PrivateResource">
 
 	<ImageView
 		android:id="@+id/imageView3"
@@ -51,166 +52,16 @@
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
-	<ScrollView
-		android:id="@+id/sv_gallery"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+	<ListView
+		android:padding="12dp"
+		android:id="@+id/lv_gallery"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
 		android:layout_marginTop="4dp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/iv_gallery">
-
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent">
-
-			<ImageView
-				android:id="@+id/i1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i2"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i3"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i4"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i5"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i6"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i7"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i8"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i9"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i10"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i11"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i12"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i13"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i14"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i15"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i16"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i17"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i18"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i19"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-			<ImageView
-				android:id="@+id/i20"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
-				android:scaleType="fitXY" />
-
-
-		</LinearLayout>
-
-	</ScrollView>
-
+		android:dividerHeight="20dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/iv_gallery" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

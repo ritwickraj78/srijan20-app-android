@@ -35,4 +35,12 @@
 	<string name="contact">CONTACT</string>
 	<string name="register">Register</string>
 	<string name="gallery">Gallery</string>
+	<string name="sign_in">Sign in</string>
+	<string name="name">Name (eg. Rishav Agarwal)</string>
+	<string name="email">Email (eg. rishavcoder@gmail.com)</string>
+	<string name="college">College (eg. Jadavpur University)</string>
+	<string name="degree">Degree (eg. B E/B Tech)</string>
+	<string name="course">Course (eg. Information Technology)</string>
+	<string name="year">Year (eg. 4th year)</string>
+	<string name="srijan">srijan 20</string>
 </resources>

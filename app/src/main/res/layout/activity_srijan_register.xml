@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:clickable="true"
+	android:focusable="true"
+	android:padding="8dp"
+	tools:context=".activities.SrijanRegister">
+
+	<TextView
+		android:id="@+id/tv_srijan"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="sans-serif-light"
+		android:text="@string/srijan"
+		android:textAllCaps="true"
+		android:textSize="40sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ScrollView
+		android:id="@+id/sv_form"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginTop="8dp"
+		app:layout_constraintBottom_toTopOf="@id/btn_register"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tv_srijan">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/in_reg_name"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/et_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/name"
+					android:inputType="textPersonName" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/in_reg_email"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/in_reg_name">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/et_email"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/email"
+					android:inputType="textEmailAddress" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/in_reg_clg"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/in_reg_email">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/et_clg"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/college"
+					android:inputType="text" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/in_reg_degree"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/in_reg_clg">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/et_degree"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/degree"
+					android:inputType="text" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/in_reg_course"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/in_reg_degree">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/et_course"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/course"
+					android:inputType="text" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.jaredrummler.materialspinner.MaterialSpinner
+				android:id="@+id/spinner_year"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:hint="@string/year"
+				android:inputType="number"
+				android:padding="8dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/in_reg_course" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</ScrollView>
+
+	<Button
+		android:id="@+id/btn_register"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/register"
+		android:textAllCaps="true"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/sv_form" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
