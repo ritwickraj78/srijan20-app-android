@@ -2,14 +2,16 @@ package in.srijanju.androidapp.model;
 
 import androidx.annotation.NonNull;
 
-public class User {
+import java.util.Map;
+
+public class UserSend {
 	public String name, email, college, degree, course, year;
 	public int complete;
-	public long updatetime;
+	public Map<String, String> updatetime;
 
-	public User(
+	public UserSend(
 		String name, String email, String college, String degree, String course, String year,
-		int complete, long updatetime) {
+		int complete, Map<String, String> updatetime) {
 		this.name = name;
 		this.email = email;
 		this.college = college;
