@@ -1,354 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/mp_background"
-    tools:context=".activities.MainPage">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/mp_background"
+	tools:context=".activities.MainPage">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_background_circles"
-        android:scaleX="1.2"
-        android:scaleY="1.2"
-        android:src="@drawable/mp_circles_center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@string/main_page_background_circles"
+		android:scaleX="1.2"
+		android:scaleY="1.2"
+		android:src="@drawable/mp_circles_center"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_background_top"
-        android:scaleType="fitStart"
-        android:scaleX="1.3"
-        android:scaleY="1.3"
-        android:src="@drawable/mp_background_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/g_top_right2"/>
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_background_top"
+		android:src="@drawable/mp_background_top"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/profilesetter"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+	<ImageView
+		android:id="@+id/iv_tr_circles"
+		android:layout_width="250dp"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_circles_top_right"
+		android:src="@drawable/mp_circles_upper_right"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_profile_circle"
-        android:scaleType="fitStart"
-        android:scaleX="0.4"
-        android:scaleY="0.48"
-        android:src="@drawable/avengerpro"
-        app:layout_constraintBottom_toTopOf="@+id/profilesetter"
-        app:layout_constraintEnd_toEndOf="@id/line1"
-        app:layout_constraintStart_toStartOf="@id/line0" />
+	<ImageView
+		android:id="@+id/iv_tr_tri"
+		android:layout_width="210dp"
+		android:layout_height="160dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/triangle_above_srijan_circle"
+		android:src="@drawable/triangle_upper_above_circle"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
+	<ImageView
+		android:id="@+id/srijan"
+		android:layout_width="210dp"
+		android:layout_height="120dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/fetsu_presents_srijan_20"
+		android:scaleX="0.8"
+		android:scaleY="0.8"
+		android:src="@drawable/srijan20_upper"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_top_right"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.375" />
+	<ImageView
+		android:layout_width="100dp"
+		android:layout_height="120dp"
+		android:layout_marginTop="24dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_profile_circle"
+		android:scaleY="1.2"
+		android:src="@drawable/avengerpro"
+		app:layout_constraintEnd_toStartOf="@id/iv_tr_circles"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_top_right1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.525" />
+	<TextView
+		android:id="@+id/timer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="24dp"
+		android:background="@drawable/timer_background"
+		android:contentDescription="@string/main_page_timer_background"
+		android:padding="30dp"
+		android:scaleY="0.35"
+		android:shadowColor="#f99245"
+		android:shadowDx="-3"
+		android:shadowDy="-3"
+		android:shadowRadius="1"
+		android:textColor="#ffffff"
+		android:textSize="35sp"
+		app:layout_constraintBottom_toTopOf="@+id/iv_about"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/iv_tr_tri" />
 
+	<ImageView
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_background_bottom"
+		android:src="@drawable/mp_back_bottom"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
+	<ImageView
+		android:id="@+id/iv_sponsor"
+		android:layout_width="120dp"
+		android:layout_height="120dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_sponsor"
+		android:src="@drawable/sponsorswhite"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/iv_gallery"
+		app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+	<ImageView
+		android:id="@+id/iv_gallery"
+		android:layout_width="120dp"
+		android:layout_height="120dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_gallery"
+		android:src="@drawable/gallerywhite"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/iv_sponsor"
+		app:layout_constraintStart_toEndOf="@id/iv_ca" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line3"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.99" />
+	<ImageView
+		android:id="@+id/iv_ca"
+		android:layout_width="120dp"
+		android:layout_height="120dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_ambassador"
+		android:src="@drawable/campusambassador"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/iv_gallery" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0" />
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.62" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_top_right2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.3" />
 
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/timer_background"
-        android:contentDescription="@string/main_page_timer_background"
-        android:padding="30dp"
-        android:scaleType="fitStart"
-        android:scaleX="1"
-        android:scaleY="0.35"
-        android:textColor="#ffffff"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_about"
-        app:layout_constraintStart_toStartOf="@+id/line0"
-        app:layout_constraintTop_toBottomOf="@+id/g_top_right2"
-        android:shadowColor="#f99245"
-        android:shadowDx="-3"
-        android:shadowDy="-3"
-        android:shadowRadius="1"/>
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/options3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.87" />
 
+	<ImageView
+		android:id="@+id/iv_about"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_about"
+		android:scaleType="fitStart"
+		android:scaleX="1.4"
+		android:scaleY="1.3"
+		android:src="@drawable/about"
+		app:layout_constraintBottom_toTopOf="@+id/options2"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/options1" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomline"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.79" />
+	<ImageView
+		android:id="@+id/iv_events"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:contentDescription="@string/main_page_events"
+		android:scaleType="fitStart"
+		android:scaleX="1.3"
+		android:scaleY="1.3"
+		android:src="@drawable/events"
+		app:layout_constraintBottom_toTopOf="@+id/options3"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/options2" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottommostline"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="1" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_circles_top_right"
-        android:scaleType="fitStart"
-        android:scaleX="0.85"
-        android:scaleY="0.85"
-        android:src="@drawable/mp_circles_upper_right"
-        app:layout_constraintBottom_toTopOf="@id/g_top_right1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/g_top_right"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/triangle_above_srijan_circle"
-        android:scaleType="fitStart"
-        android:scaleX="0.55"
-        android:scaleY="0.55"
-        android:src="@drawable/triangle_upper_above_circle"
-        app:layout_constraintBottom_toTopOf="@id/g_top_right1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/g_top_right"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/srijan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/fetsu_presents_srijan_20"
-        android:scaleType="fitStart"
-        android:scaleX="0.35"
-        android:scaleY="0.35"
-        android:src="@drawable/srijan20_upper"
-        app:layout_constraintBottom_toTopOf="@id/g_top_right2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/g_top_right"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_background_bottom"
-        android:scaleX="1.25"
-        android:scaleY="1.5"
-        android:src="@drawable/mp_back_bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/options3" />
-
-    <ImageView
-        android:id="@+id/iv_sponsor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_sponsor"
-        android:scaleType="fitStart"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
-        android:src="@drawable/sponsorswhite"
-        app:layout_constraintBottom_toTopOf="@+id/bottommostline"
-        app:layout_constraintEnd_toEndOf="@id/line1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bottomline" />
-
-    <ImageView
-        android:id="@+id/iv_ca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_ambassador"
-        android:scaleType="fitStart"
-        android:scaleX="0.46"
-        android:scaleY="0.46"
-        android:src="@drawable/campusambassador"
-        app:layout_constraintBottom_toTopOf="@+id/bottommostline"
-        app:layout_constraintEnd_toEndOf="@id/line3"
-        app:layout_constraintStart_toStartOf="@+id/line2"
-        app:layout_constraintTop_toBottomOf="@id/bottomline" />
-
-    <ImageView
-        android:id="@+id/iv_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/main_page_gallery"
-        android:scaleType="fitStart"
-        android:scaleX="0.46"
-        android:scaleY="0.46"
-        android:src="@drawable/gallerywhite"
-        app:layout_constraintBottom_toTopOf="@+id/bottommostline"
-        app:layout_constraintEnd_toEndOf="@id/iv_ca"
-        app:layout_constraintStart_toStartOf="@+id/iv_sponsor"
-        app:layout_constraintTop_toBottomOf="@id/bottomline" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/options1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.62" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/options2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/options3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.87" />
-
-    <ImageView
-        android:id="@+id/iv_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/main_page_about"
-        android:scaleType="fitStart"
-        android:scaleX="1.4"
-        android:scaleY="1.3"
-        android:src="@drawable/about"
-        app:layout_constraintBottom_toTopOf="@+id/options2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/options1" />
-
-    <ImageView
-        android:id="@+id/iv_events"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/main_page_events"
-        android:scaleType="fitStart"
-        android:scaleX="1.3"
-        android:scaleY="1.3"
-        android:src="@drawable/events"
-        app:layout_constraintBottom_toTopOf="@+id/options3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/options2" />
-
-    <ImageView
-        android:id="@+id/iv_scan_qr"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/mp_circles_center"
-        android:contentDescription="@string/scan_qr_code"
-        android:src="@drawable/srijan_qr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_events" />
-
-    <!--
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/line2"
-        app:layout_constraintStart_toStartOf="@id/line1"
-        app:layout_constraintTop_toBottomOf="@id/bottommostline"
-        android:orientation="horizontal"
-        android:weightSum="5">
-
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:src="@drawable/youtube"
-            android:layout_weight="1"/>
-        <View
-            android:layout_width="4dp"
-            android:layout_height="100px"
-            android:background="#ffffff"/>
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:src="@drawable/phone"
-            android:layout_weight="1"/>
-        <View
-            android:layout_width="4dp"
-            android:layout_height="100px"
-            android:background="#ffffff"/>
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:src="@drawable/mail"
-            android:layout_weight="1"/>
-        <View
-            android:layout_width="4dp"
-            android:layout_height="100px"
-            android:background="#ffffff"/>
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:src="@drawable/facebook"
-            android:layout_weight="1"/>
-        <View
-            android:layout_width="4dp"
-            android:layout_height="100px"
-            android:background="#ffffff"/>
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="100px"
-            android:src="@drawable/instagram"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    -->
-
+	<ImageView
+		android:id="@+id/iv_scan_qr"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_marginTop="4dp"
+		android:background="@drawable/mp_circles_center"
+		android:contentDescription="@string/scan_qr_code"
+		android:src="@drawable/srijan_qr"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/iv_events" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

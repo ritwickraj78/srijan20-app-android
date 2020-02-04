@@ -9,7 +9,7 @@
 
 	<ImageView
 		android:id="@+id/iv_srijan_logo"
-		android:layout_width="wrap_content"
+		android:layout_width="300dp"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/fetsu_presents_srijan_20"
 		android:src="@drawable/srijan20_upper"
