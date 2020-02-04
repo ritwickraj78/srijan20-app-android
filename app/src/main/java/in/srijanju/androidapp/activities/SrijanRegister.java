@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,15 +78,23 @@ public class SrijanRegister extends AppCompatActivity {
 				UserSend newUserSend = new UserSend(name, email, college, degree, course, year, 1,
 					updatetime);
 				// Add user to the database
-				FirebaseDatabase.getInstance().getReference("srijan/profile/" + uid + "/parentprofile")
-					.setValue(newUserSend).addOnSuccessListener(new OnSuccessListener<Void>() {
-					@Override
-					public void onSuccess(Void aVoid) {
-						// If added successfully, open app content
-						startActivity(new Intent(SrijanRegister.this, MainPage.class));
-						finish();
-					}
-				});
+				FirebaseDatabase.getInstance()
+					.getReference("srijan/profile/" + uid + "/parentprofile")
+					.setValue(newUserSend)
+					.addOnSuccessListener(new OnSuccessListener<Void>() {
+						@Override
+						public void onSuccess(Void aVoid) {
+							// If added successfully, open app content
+							startActivity(new Intent(SrijanRegister.this, MainPage.class));
+							finish();
+						}
+					})
+					.addOnFailureListener(new OnFailureListener() {
+						@Override
+						public void onFailure(@NonNull Exception e) {
+							// TODO: Check validity of the data before pushing to the database
+						}
+					});
 			}
 		});
 	}

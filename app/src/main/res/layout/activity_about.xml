@@ -24,8 +24,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:contentDescription="@string/event_black_overlay"
-		android:scaleY="1.2"
 		android:scaleX="1.3"
+		android:scaleY="1.2"
 		android:src="@drawable/event_black_overlay"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintLeft_toLeftOf="parent"
@@ -33,16 +33,16 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
-		android:layout_width="wrap_content"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="8dp"
 		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_events"
-		android:scaleX="1.4"
-		android:scaleY="1.3"
+		android:contentDescription="@string/main_page_about"
+		android:scaleX="1.3"
+		android:scaleY="1.2"
 		android:src="@drawable/about"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<androidx.constraintlayout.widget.Guideline
