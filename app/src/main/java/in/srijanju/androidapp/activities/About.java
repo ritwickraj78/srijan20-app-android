@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -26,8 +28,10 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 	private static final String srijanAbt = "SRIJAN has always dedicated itself to the idea of " +
 		"promoting, showcasing, and encouraging concepts and research beyond the known periphery. " +
 		"SRIJAN is not just a fest for us. It is a Religion.";
+
 	private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
 	private static final String VIDEO_ID = "7oAc0d_W8-k";
+
 	String[] values = new String[]{"Rishav Kumar (IT 3rd Year)", "Gaurav Damani (IT 3rd Year)",
 		"Rishav Agarwal (IT 4th Year)", "Himanshu Daga (IT 4th Year)"};
 	YouTubePlayerView playerView;
@@ -38,7 +42,7 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 		setContentView(R.layout.activity_about);
 
 		playerView = findViewById(R.id.srijanVid);
-		playerView.initialize(API_KEY, this);
+		playerView.initialize(API_KEY, About.this);
 
 		TextView srijanText = findViewById(R.id.srijanText);
 		srijanText.setText(srijanAbt);
@@ -110,14 +114,15 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 			this.values = values;
 		}
 
+		@NonNull
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(
+			int position, View convertView, @NonNull ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View rowView;
-			if (convertView == null)
+			View rowView = convertView;
+			if (convertView == null && inflater != null)
 				rowView = inflater.inflate(R.layout.creator_item, parent, false);
-			else rowView = convertView;
 			TextView nametextView = rowView.findViewById(R.id.name);
 			String name = values.get(position);
 			nametextView.setText(name);

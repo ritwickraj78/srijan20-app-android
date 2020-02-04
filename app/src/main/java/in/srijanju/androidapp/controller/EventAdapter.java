@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.URLUtil;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,7 +62,7 @@ public class EventAdapter extends BaseAdapter {
 		final ImageView ivEvent = v.findViewById(R.id.iv_event_icon_back);
 
 		String poster = events.get(position).poster;
-		if (poster == null || poster.equals(""))
+		if (poster == null || poster.equals("") || !URLUtil.isHttpsUrl(poster))
 			poster = "https://image.freepik.com/free-photo/gray-painted-background_53876-94041.jpg";
 
 		Glide.with(context).asBitmap().load(poster).into(

@@ -5,7 +5,10 @@
 	<uses-feature
 		android:name="android.hardware.camera"
 		android:required="false" />
+
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+
 	<application
 		android:name=".SrijanApp"
 		android:allowBackup="true"
@@ -17,6 +20,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
+		<activity android:name=".activities.CameraScan"></activity>
 		<activity android:name=".activities.SrijanRegister" />
 		<activity android:name=".activities.EventDescription" />
 		<activity android:name=".activities.Events" />
@@ -35,4 +39,5 @@
 			</intent-filter>
 		</activity>
 	</application>
+
 </manifest>
