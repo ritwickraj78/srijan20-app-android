@@ -31,3 +31,6 @@
 # Firebase
 -keepattributes Signature
 -keepattributes *Annotation*
+
+-keep class in.srijanju.androidapp.model.*
+-keepclasseswithmembers class in.srijanju.androidapp.model.* { *;}
