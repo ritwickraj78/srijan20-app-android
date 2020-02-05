@@ -17,7 +17,9 @@
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
 		<activity android:name=".activities.CameraScan"></activity>
-		<activity android:name=".activities.SrijanRegister" />
+		<activity
+			android:name=".activities.SrijanRegister"
+			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 		<activity android:name=".activities.EventDescription" />
 		<activity android:name=".activities.Events" />
 		<activity android:name=".activities.About" />

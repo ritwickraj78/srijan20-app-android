@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:orientation="vertical"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:background="#0e1111"
-	android:padding="10dp"
 	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="10dp"
 	tools:context=".activities.SrijanRegister">
 
 	<TextView
@@ -14,65 +13,54 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal"
-		android:text="@string/srijan"
-		android:layout_margin="20dp"
-		android:scaleX="1"
-		android:scaleY="1"
-		android:textColor="#ffffff"
-		android:textStyle="bold"
+		android:fontFamily="sans-serif-condensed-light"
+		android:shadowColor="@android:color/darker_gray"
 		android:shadowDx="-4"
 		android:shadowDy="-4"
-		android:letterSpacing="0.03"
-		android:shadowColor="@android:color/darker_gray"
 		android:shadowRadius="1"
+		android:text="@string/srijan"
 		android:textAllCaps="true"
-		android:textSize="40sp"/>
+		android:textColor="#eee"
+		android:textScaleX="1.2"
+		android:textSize="40sp" />
 
-	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent" >
+		android:layout_height="match_parent">
 
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:orientation="vertical" >
+			android:orientation="vertical">
+
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_name"
-				android:layout_marginTop="15dp"
 				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-				app:boxBackgroundColor="@android:color/darker_gray"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				app:boxStrokeColor="@color/colorAccent"
 				app:endIconMode="clear_text"
-				app:endIconTint="@color/colorPrimaryDark">
+				app:endIconTint="@color/colorAccent"
+				app:errorEnabled="true"
+				app:errorTextColor="@android:color/holo_red_dark"
+				app:hintTextColor="@color/colorAccent">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_name"
+					style="@style/AppTheme"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:hint="@string/name"
 					android:inputType="textPersonName" />
 			</com.google.android.material.textfield.TextInputLayout>
-			<TextView
-				android:id="@+id/name"
-				android:layout_width="match_parent"
-				android:layout_height="30dp"
-				android:padding="5dp"
-				android:textColor="#ff8c69"
-				android:textStyle="bold"
-				tools:text="wrong name" />
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_email"
 				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-				app:boxBackgroundColor="@android:color/darker_gray"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
-				app:endIconMode="clear_text"
-
-				app:endIconTint="@color/colorPrimaryDark">
+				android:layout_marginTop="8dp">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_email"
@@ -81,23 +69,18 @@
 					android:hint="@string/email"
 					android:inputType="textEmailAddress" />
 			</com.google.android.material.textfield.TextInputLayout>
-			<TextView
-				android:id="@+id/email"
-				android:layout_width="match_parent"
-				android:layout_height="30dp"
-				android:padding="5dp"
-				android:textColor="#ff8c69"
-				android:textStyle="bold"
-				tools:text="wrong name" />
+
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_clg"
 				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-				app:boxBackgroundColor="@android:color/darker_gray"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="15dp"
+				app:boxStrokeColor="@color/colorAccent"
 				app:endIconMode="clear_text"
-				app:endIconTint="@color/colorPrimaryDark">
+				app:endIconTint="@color/colorAccent"
+				app:errorEnabled="true"
+				app:hintTextColor="@color/colorAccent">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_clg"
@@ -106,23 +89,18 @@
 					android:hint="@string/college"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-			<TextView
-				android:id="@+id/college"
-				android:layout_width="match_parent"
-				android:layout_height="30dp"
-				android:padding="5dp"
-				android:textColor="#ff8c69"
-				android:textStyle="bold"
-				tools:text="wrong name" />
+
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_degree"
 				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-				app:boxBackgroundColor="@android:color/darker_gray"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="15dp"
+				app:boxStrokeColor="@color/colorAccent"
 				app:endIconMode="clear_text"
-				app:endIconTint="@color/colorPrimaryDark">
+				app:endIconTint="@color/colorAccent"
+				app:errorEnabled="true"
+				app:hintTextColor="@color/colorAccent">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_degree"
@@ -131,23 +109,18 @@
 					android:hint="@string/degree"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-			<TextView
-				android:id="@+id/degree"
-				android:layout_width="match_parent"
-				android:layout_height="30dp"
-				android:padding="5dp"
-				android:textColor="#ff8c69"
-				android:textStyle="bold"
-				tools:text="wrong name" />
+
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_course"
 				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-				app:boxBackgroundColor="@android:color/darker_gray"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="15dp"
+				app:boxStrokeColor="@color/colorAccent"
 				app:endIconMode="clear_text"
-				app:endIconTint="@color/colorPrimaryDark">
+				app:endIconTint="@color/colorAccent"
+				app:errorEnabled="true"
+				app:hintTextColor="@color/colorAccent">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_course"
@@ -156,37 +129,26 @@
 					android:hint="@string/course"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-			<TextView
-				android:id="@+id/course"
-				android:layout_width="match_parent"
-				android:layout_height="30dp"
-				android:padding="5dp"
-				android:textColor="#ff8c69"
-				android:textStyle="bold"
-				tools:text="wrong name" />
+
 			<com.jaredrummler.materialspinner.MaterialSpinner
 				android:id="@+id/spinner_year"
-
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				android:hint="@string/year"
 				android:inputType="number"
-				android:padding="8dp" />
+				android:padding="8dp"
+				app:ms_text_color="@android:color/white" />
 
 			<Button
 				android:id="@+id/btn_register"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="@string/register"
 				android:layout_gravity="center_horizontal"
 				android:layout_marginTop="20dp"
-				android:background="@android:color/darker_gray"
-				android:textAllCaps="true" />
+				android:text="@string/register"
+				android:textAllCaps="true"
+				android:textColor="@android:color/white" />
 
 		</LinearLayout>
 	</ScrollView>
-
-
 </LinearLayout>
-

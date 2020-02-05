@@ -1,6 +1,8 @@
 package in.srijanju.androidapp.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void run() {
 				// Sleep for 100ms and check if user is signed in
-				/*try {
+				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}*/
+				}
 
 				// If user already signed in, start the app
 				if (FirebaseAuth.getInstance().getCurrentUser() != null) {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
 				// Otherwise show the sign in button
 				final Button btnSign = findViewById(R.id.btn_mp_signin);
+				btnSign.setBackgroundColor(Color.parseColor("#33ffffff"));
 				btnSign.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -88,39 +91,40 @@ public class MainActivity extends AppCompatActivity {
 		// If registered, start main page else register
 		String uid = user.getUid();
 		FirebaseDatabase.getInstance()
-			.getReference("srijan/profile/" + uid + "/parentprofile/complete").addListenerForSingleValueEvent(
-			new ValueEventListener() {
+			.getReference("srijan/profile/" + uid + "/parentprofile/complete")
+			.addListenerForSingleValueEvent(
+				new ValueEventListener() {
 
-				@Override
-				public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-					// If completed value doesn't exist, register
-					if (dataSnapshot.getValue() == null) {
-						startActivity(new Intent(MainActivity.this, SrijanRegister.class));
+					@Override
+					public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+						// If completed value doesn't exist, register
+						if (dataSnapshot.getValue() == null) {
+							startActivity(new Intent(MainActivity.this, SrijanRegister.class));
+							finish();
+							return;
+						}
+
+						// Get the value
+						long val = 0;
+						try {
+							val = dataSnapshot.getValue(Long.class);
+						} catch (NullPointerException ignored) {
+						}
+
+						// If registered, start main page else register
+						if (val == 1) {
+							startActivity(new Intent(MainActivity.this, MainPage.class));
+						} else {
+							startActivity(new Intent(MainActivity.this, SrijanRegister.class));
+						}
 						finish();
-						return;
 					}
 
-					// Get the value
-					long val = 0;
-					try {
-						val = dataSnapshot.getValue(Long.class);
-					} catch (NullPointerException ignored) {
+					@Override
+					public void onCancelled(@NonNull DatabaseError databaseError) {
 					}
-
-					// If registered, start main page else register
-					if (val == 1) {
-						startActivity(new Intent(MainActivity.this, MainPage.class));
-					} else {
-						startActivity(new Intent(MainActivity.this, SrijanRegister.class));
-					}
-					finish();
 				}
-
-				@Override
-				public void onCancelled(@NonNull DatabaseError databaseError) {
-				}
-			}
-		);
+			);
 	}
 
 	@Override

@@ -1,10 +1,10 @@
 package in.srijanju.androidapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,13 +35,11 @@ public class Ambassador extends AppCompatActivity {
 			new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// TODO: Open correct form link
-					Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
-					// Intent intent = new Intent();
-					// intent.setAction(Intent.ACTION_VIEW);
-					// intent.addCategory(Intent.CATEGORY_BROWSABLE);
-					// intent.setData(Uri.parse("http://www.jaduniv.edu.in"));
-					// startActivity(intent);
+					Intent myIntent = new Intent(Ambassador.this, webview.class);
+					myIntent.putExtra("url",
+						"https://docs.google" +
+							".com/forms/d/e/1FAIpQLSewELaYYdVa33eY2F1z_487plvltoFAu3VF2KiiWHg41sT5Zg/viewform");
+					startActivity(myIntent);
 				}
 			}
 		);
