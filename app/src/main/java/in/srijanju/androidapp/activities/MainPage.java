@@ -126,7 +126,8 @@ public class MainPage extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO: Complete Sponsor page
-				Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+				startActivity(new Intent(MainPage.this, Sponsors.class));
+				//Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
 			}
 		});
 

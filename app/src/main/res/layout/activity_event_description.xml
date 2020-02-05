@@ -59,11 +59,10 @@
 					android:layout_height="wrap_content"
 					android:layout_margin="10dp"
 					android:layout_weight="5"
-					android:fontFamily="sans-serif-thin"
 					android:gravity="start"
 					android:shadowColor="#f99245"
-					android:shadowDx="-4"
-					android:shadowDy="-4"
+					android:shadowDx="-3"
+					android:shadowDy="-3"
 					android:shadowRadius="1"
 					android:textColor="@color/cardview_light_background"
 					android:textSize="30sp" />
@@ -74,11 +73,11 @@
 					android:layout_height="wrap_content"
 					android:layout_margin="10dp"
 					android:layout_weight="3"
-					android:fontFamily="sans-serif-thin"
+
 					android:gravity="end"
 					android:shadowColor="#f99245"
-					android:shadowDx="-4"
-					android:shadowDy="-4"
+					android:shadowDx="-3"
+					android:shadowDy="-3"
 					android:shadowRadius="1"
 					android:textColor="@color/cardview_light_background"
 					android:textSize="20sp" />
@@ -91,10 +90,17 @@
 				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
 				android:layout_marginEnd="10dp"
-				android:fontFamily="@font/kg"
 				android:gravity="center"
-				android:textColor="@color/cardview_light_background"
-				android:textSize="24sp" />
+
+				android:scaleX="1"
+				android:scaleY="1"
+				android:textColor="#ffffff"
+				android:textSize="20sp"
+				android:shadowDx="-2"
+				android:shadowDy="-2"
+				android:letterSpacing="0.03"
+				android:shadowColor="#f99245"
+				android:shadowRadius="1" />
 
 			<TextView
 				android:id="@+id/event_rules"
@@ -103,12 +109,13 @@
 				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
 				android:layout_marginEnd="10dp"
-				android:fontFamily="sans-serif-bold"
+
 				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
+				android:textStyle="italic"
 				android:text="@string/rules"
 				android:textAllCaps="true"
 				android:textColor="@color/cardview_light_background"
@@ -121,10 +128,19 @@
 				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
 				android:layout_marginEnd="10dp"
-				android:fontFamily="@font/kg"
+
+				android:scaleX="1"
+				android:scaleY="1"
+				android:textColor="#ffffff"
+				android:textSize="20sp"
+				android:shadowDx="-2"
+				android:shadowDy="-2"
+				android:letterSpacing="0.03"
+				android:shadowColor="#f99245"
+				android:shadowRadius="1"
+
 				android:gravity="center"
-				android:textColor="@color/cardview_light_background"
-				android:textSize="24sp" />
+				/>
 
 			<TextView
 				android:id="@+id/event_contact"
@@ -133,13 +149,13 @@
 				android:layout_marginStart="10dp"
 				android:layout_marginTop="5dp"
 				android:layout_marginEnd="10dp"
-				android:fontFamily="sans-serif-bold"
 				android:gravity="start"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
 				android:shadowDy="-3"
 				android:shadowRadius="1"
 				android:text="@string/contact"
+				android:textStyle="italic"
 				android:textAllCaps="true"
 				android:textColor="@color/cardview_light_background"
 				android:textSize="32sp" />
@@ -152,7 +168,6 @@
 				android:layout_marginTop="5dp"
 				android:layout_marginEnd="10dp"
 				android:autoLink="phone"
-				android:fontFamily="@font/kg"
 				android:gravity="center"
 				android:shadowColor="#f99245"
 				android:shadowDx="-3"
@@ -160,7 +175,7 @@
 				android:shadowRadius="1"
 				android:textColor="@color/cardview_light_background"
 				android:textColorLink="#fff"
-				android:textSize="28sp" />
+				android:textSize="22sp" />
 
 			<Button
 				android:id="@+id/button"

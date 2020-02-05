@@ -25,6 +25,7 @@
 		<activity android:name=".activities.Gallery" />
 		<activity android:name=".activities.Ambassador" />
 		<activity android:name=".activities.webview" />
+		<activity android:name=".activities.Sponsors" />
 		<activity
 			android:name=".activities.MainActivity"
 			android:theme="@style/AppTheme">

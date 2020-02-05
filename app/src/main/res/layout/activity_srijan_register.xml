@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
 	android:layout_width="match_parent"
+	android:background="#0e1111"
+	android:padding="10dp"
 	android:layout_height="match_parent"
-	android:clickable="true"
-	android:focusable="true"
-	android:padding="8dp"
 	tools:context=".activities.SrijanRegister">
 
 	<TextView
 		android:id="@+id/tv_srijan"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:fontFamily="sans-serif-light"
+		android:layout_gravity="center_horizontal"
 		android:text="@string/srijan"
+		android:layout_margin="20dp"
+		android:scaleX="1"
+		android:scaleY="1"
+		android:textColor="#ffffff"
+		android:textStyle="bold"
+		android:shadowDx="-4"
+		android:shadowDy="-4"
+		android:letterSpacing="0.03"
+		android:shadowColor="@android:color/darker_gray"
+		android:shadowRadius="1"
 		android:textAllCaps="true"
-		android:textSize="40sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		android:textSize="40sp"/>
 
-	<ScrollView
-		android:id="@+id/sv_form"
-		android:layout_width="0dp"
-		android:layout_height="0dp"
-		android:layout_marginTop="8dp"
-		app:layout_constraintBottom_toTopOf="@id/btn_register"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/tv_srijan">
+	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
 
-		<androidx.constraintlayout.widget.ConstraintLayout
+		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical" >
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_name"
-				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-				android:layout_width="0dp"
+				android:layout_marginTop="15dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				app:boxBackgroundColor="@android:color/darker_gray"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent">
+				app:endIconMode="clear_text"
+				app:endIconTint="@color/colorPrimaryDark">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_name"
@@ -51,16 +54,25 @@
 					android:hint="@string/name"
 					android:inputType="textPersonName" />
 			</com.google.android.material.textfield.TextInputLayout>
+			<TextView
+				android:id="@+id/name"
+				android:layout_width="match_parent"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:textColor="#ff8c69"
+				android:textStyle="bold"
+				tools:text="wrong name" />
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_email"
-				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-				android:layout_width="0dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				app:boxBackgroundColor="@android:color/darker_gray"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/in_reg_name">
+				app:endIconMode="clear_text"
+
+				app:endIconTint="@color/colorPrimaryDark">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_email"
@@ -69,16 +81,23 @@
 					android:hint="@string/email"
 					android:inputType="textEmailAddress" />
 			</com.google.android.material.textfield.TextInputLayout>
-
+			<TextView
+				android:id="@+id/email"
+				android:layout_width="match_parent"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:textColor="#ff8c69"
+				android:textStyle="bold"
+				tools:text="wrong name" />
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_clg"
-				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-				android:layout_width="0dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				app:boxBackgroundColor="@android:color/darker_gray"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/in_reg_email">
+				app:endIconMode="clear_text"
+				app:endIconTint="@color/colorPrimaryDark">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_clg"
@@ -87,16 +106,23 @@
 					android:hint="@string/college"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-
+			<TextView
+				android:id="@+id/college"
+				android:layout_width="match_parent"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:textColor="#ff8c69"
+				android:textStyle="bold"
+				tools:text="wrong name" />
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_degree"
-				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-				android:layout_width="0dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				app:boxBackgroundColor="@android:color/darker_gray"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/in_reg_clg">
+				app:endIconMode="clear_text"
+				app:endIconTint="@color/colorPrimaryDark">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_degree"
@@ -105,16 +131,23 @@
 					android:hint="@string/degree"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-
+			<TextView
+				android:id="@+id/degree"
+				android:layout_width="match_parent"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:textColor="#ff8c69"
+				android:textStyle="bold"
+				tools:text="wrong name" />
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_course"
-				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-				android:layout_width="0dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				app:boxBackgroundColor="@android:color/darker_gray"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/in_reg_degree">
+				app:endIconMode="clear_text"
+				app:endIconTint="@color/colorPrimaryDark">
 
 				<com.google.android.material.textfield.TextInputEditText
 					android:id="@+id/et_course"
@@ -123,30 +156,37 @@
 					android:hint="@string/course"
 					android:inputType="text" />
 			</com.google.android.material.textfield.TextInputLayout>
-
+			<TextView
+				android:id="@+id/course"
+				android:layout_width="match_parent"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:textColor="#ff8c69"
+				android:textStyle="bold"
+				tools:text="wrong name" />
 			<com.jaredrummler.materialspinner.MaterialSpinner
 				android:id="@+id/spinner_year"
-				android:layout_width="0dp"
+
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
 				android:hint="@string/year"
 				android:inputType="number"
-				android:padding="8dp"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@id/in_reg_course" />
-		</androidx.constraintlayout.widget.ConstraintLayout>
+				android:padding="8dp" />
+
+			<Button
+				android:id="@+id/btn_register"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/register"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="20dp"
+				android:background="@android:color/darker_gray"
+				android:textAllCaps="true" />
+
+		</LinearLayout>
 	</ScrollView>
 
-	<Button
-		android:id="@+id/btn_register"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/register"
-		android:textAllCaps="true"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/sv_form" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+

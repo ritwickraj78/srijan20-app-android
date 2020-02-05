@@ -13,7 +13,6 @@
 		android:id="@+id/name"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:fontFamily="@font/kg"
 		android:paddingTop="8dp"
 		android:paddingBottom="8dp"
 		android:shadowColor="#f99245"

@@ -14,5 +14,6 @@ public class SrijanApp extends Application {
 		db.setPersistenceEnabled(true);
 		db.getReference("srijan/events").keepSynced(true);
 		db.getReference("srijan/gallery").keepSynced(true);
+		db.getReference("srijan/profile").keepSynced(false);
 	}
 }
