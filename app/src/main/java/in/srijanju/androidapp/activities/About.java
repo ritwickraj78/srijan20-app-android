@@ -56,7 +56,7 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
 			creatorListView.addView(view);
 		}
 
-		//ONclickListeners
+		//OnClickListeners
 		ImageView img1 = findViewById(R.id.JU_official);
 		img1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {

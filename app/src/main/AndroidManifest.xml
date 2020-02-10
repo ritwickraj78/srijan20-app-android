@@ -8,6 +8,7 @@
 	<application
 		android:name=".SrijanApp"
 		android:allowBackup="true"
+		android:fullBackupContent="true"
 		android:hardwareAccelerated="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
@@ -16,7 +17,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
-		<activity android:name=".activities.CameraScan"></activity>
+		<activity android:name=".activities.CameraScan" />
 		<activity
 			android:name=".activities.SrijanRegister"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
@@ -33,10 +34,22 @@
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
-
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+			<intent-filter
+				android:autoVerify="true"
+				android:label="@string/app_name">
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<!-- Accepts URIs that begin with "https://srjanju.in" -->
+				<data
+					android:host="srijanju.in"
+					android:scheme="https" />
+			</intent-filter>
 		</activity>
+		<activity android:name=".SrijanActivity" />
 	</application>
 
 </manifest>

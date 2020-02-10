@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -159,6 +160,18 @@ public class SrijanRegister extends AppCompatActivity {
 						});
 
 				}
+			}
+		});
+
+		// Logout the user and display the sign in page
+		Button btnLogout = findViewById(R.id.btn_logout);
+		btnLogout.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				FirebaseAuth.getInstance().signOut();
+				AuthUI.getInstance().signOut(getApplicationContext());
+				startActivity(new Intent(SrijanRegister.this, MainActivity.class));
+				finish();
 			}
 		});
 	}

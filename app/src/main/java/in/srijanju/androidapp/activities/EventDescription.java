@@ -7,14 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.bumptech.glide.Glide;
 
 import in.srijanju.androidapp.R;
+import in.srijanju.androidapp.SrijanActivity;
 import in.srijanju.androidapp.model.SrijanEvent;
 
-public class EventDescription extends AppCompatActivity {
+public class EventDescription extends SrijanActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

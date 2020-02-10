@@ -8,7 +8,6 @@ import android.widget.GridView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -19,10 +18,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 import in.srijanju.androidapp.R;
+import in.srijanju.androidapp.SrijanActivity;
 import in.srijanju.androidapp.controller.EventAdapter;
 import in.srijanju.androidapp.model.SrijanEvent;
 
-public class Events extends AppCompatActivity {
+public class Events extends SrijanActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

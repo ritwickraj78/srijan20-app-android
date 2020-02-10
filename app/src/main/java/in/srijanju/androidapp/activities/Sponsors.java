@@ -2,11 +2,10 @@ package in.srijanju.androidapp.activities;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import in.srijanju.androidapp.R;
+import in.srijanju.androidapp.SrijanActivity;
 
-public class Sponsors extends AppCompatActivity {
+public class Sponsors extends SrijanActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

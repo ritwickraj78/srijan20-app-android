@@ -9,27 +9,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import in.srijanju.androidapp.R;
+import in.srijanju.androidapp.SrijanActivity;
 
-public class MainPage extends AppCompatActivity {
+public class MainPage extends SrijanActivity {
 	private TextView a;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
-		a = findViewById(R.id.timer);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-			Typeface myCustomFont = getResources().getFont(R.font.payback);
-			a.setTypeface(myCustomFont);
-		}
+
 		initialise();
 
 		/*
@@ -88,6 +83,19 @@ public class MainPage extends AppCompatActivity {
 
 	private void initialise() {
 		a = findViewById(R.id.timer);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			Typeface myCustomFont = getResources().getFont(R.font.payback);
+			a.setTypeface(myCustomFont);
+		}
+
+		ImageView ivProfile = findViewById(R.id.iv_profile);
+		ivProfile.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//	TODO: Complete profile
+				Toast.makeText(MainPage.this, "Coming soon", Toast.LENGTH_SHORT).show();
+			}
+		});
 
 		ImageView ivAbout = findViewById(R.id.iv_about);
 		ivAbout.setOnClickListener(new View.OnClickListener() {
@@ -126,8 +134,8 @@ public class MainPage extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO: Complete Sponsor page
-				startActivity(new Intent(MainPage.this, Sponsors.class));
-				//Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+				// startActivity(new Intent(MainPage.this, Sponsors.class));
+				Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
 			}
 		});
 

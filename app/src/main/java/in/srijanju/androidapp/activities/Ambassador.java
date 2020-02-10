@@ -6,11 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import in.srijanju.androidapp.R;
+import in.srijanju.androidapp.SrijanActivity;
 
-public class Ambassador extends AppCompatActivity {
+public class Ambassador extends SrijanActivity {
 	String textVal = "For the past 11 years, you’ve stormed into theatres celebrating the " +
 		"phenomenon" +
 		" that was Avengers: looked upto them dreamy-eyed as they wielded their superpower, wished " +

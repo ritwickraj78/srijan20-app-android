@@ -139,15 +139,39 @@
 				android:padding="8dp"
 				app:ms_text_color="@android:color/white" />
 
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginStart="4dp"
+				android:layout_marginTop="16dp"
+				android:layout_marginEnd="4dp"
+				android:gravity="center"
+				android:text="@string/you_can_not_change_your_details_later_please_fill_carefully"
+				android:textColor="@android:color/holo_orange_light"
+				android:textSize="12sp" />
+
 			<Button
 				android:id="@+id/btn_register"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_horizontal"
-				android:layout_marginTop="20dp"
+				android:layout_marginTop="4dp"
 				android:text="@string/register"
 				android:textAllCaps="true"
 				android:textColor="@android:color/white" />
+
+			<Button
+				android:id="@+id/btn_logout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="4dp"
+				android:background="#e00"
+				android:text="@string/logout"
+				android:textAllCaps="true"
+				android:textColor="@android:color/white"
+				app:backgroundTint="#e00" />
 
 		</LinearLayout>
 	</ScrollView>
