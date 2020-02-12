@@ -17,6 +17,9 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
+		<activity
+			android:name=".activities.EventRegister"
+			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 		<activity android:name=".activities.CameraScan" />
 		<activity
 			android:name=".activities.SrijanRegister"
@@ -34,6 +37,7 @@
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
+
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 			<intent-filter

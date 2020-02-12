@@ -45,4 +45,12 @@
 	<string name="srijan">srijan \'20</string>
 	<string name="you_can_not_change_your_details_later_please_fill_carefully">You can not change your details later. Please fill carefully.</string>
 	<string name="logout">Logout</string>
+	<string name="event_registration">Event registration</string>
+	<string name="event_name">Event name</string>
+	<string name="team_name">Team name</string>
+	<string name="team_lead_email">Team lead email</string>
+	<string name="team_member_1">Team member 1 email</string>
+	<string name="team_member_2">Team member 2 email</string>
+	<string name="team_member_3">Team member 3 email</string>
+	<string name="team_lead_contact_number">Team lead contact number</string>
 </resources>
