@@ -157,6 +157,13 @@
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.87" />
 
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/qrline"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.75" />
+
 	<ImageView
 		android:id="@+id/iv_about"
 		android:layout_width="wrap_content"
@@ -189,14 +196,18 @@
 
 	<ImageView
 		android:id="@+id/iv_scan_qr"
-		android:layout_width="48dp"
-		android:layout_height="48dp"
-		android:layout_marginTop="4dp"
-		android:background="@drawable/mp_circles_center"
+		android:layout_width="300dp"
+		android:layout_height="58dp"
+		android:layout_marginTop="15dp"
+
+		android:background="@drawable/qrbackground"
+		android:padding="10dp"
 		android:contentDescription="@string/scan_qr_code"
 		android:src="@drawable/srijan_qr"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/qrline"
 		app:layout_constraintTop_toBottomOf="@id/iv_events" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

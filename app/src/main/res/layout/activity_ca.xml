@@ -68,16 +68,15 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/ambassador_pic"
 				android:layout_margin="8dp"
-				android:shadowColor="#f99245"
-				android:shadowDx="-3"
-				android:shadowDy="-3"
-				android:textAllCaps="true"
 				android:gravity="center"
-				android:textStyle="italic"
+				android:fontFamily="sans-serif-thin"
+				android:shadowColor="#f99245"
+				android:shadowDx="-4"
+				android:shadowDy="-4"
 				android:shadowRadius="1"
 				android:text="@string/campus_ambassador"
 				android:textColor="@color/cardview_light_background"
-				android:textSize="36sp" />
+				android:textSize="40sp" />
 
 			<TextView
 				android:id="@+id/CA_text"
