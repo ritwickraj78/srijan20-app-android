@@ -59,7 +59,10 @@ public class MainPage extends SrijanActivity {
 					// long seconds = secondsDay % 60;
 					// long minutes = (secondsDay / 60) % 60;
 					long hours = (secondsDay / 3600); // % 24 not needed
-					String s = days + " DAYS \n\n" + hours + " HOURS \n\n to go! ";
+
+					String d=days>1?" DAYS \n\n":" DAY \n\n";
+					String h=hours>1?" HOURS \n\n to go! ":" HOUR \n\n to go! ";
+					String s = days + d + hours + h;
 					setText(a, s);
 				} else {
 					long difference = lastDay.getTimeInMillis() - today.getTimeInMillis();
