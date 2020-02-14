@@ -7,6 +7,8 @@ public class User {
 	public int complete;
 	public long updatetime;
 
+	public User() {}
+
 	public User(
 		String name, String email, String college, String degree, String course, String year,
 		int complete, long updatetime) {

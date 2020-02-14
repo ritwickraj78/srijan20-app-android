@@ -17,6 +17,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
+		<activity android:name=".activities.Profile"></activity>
 		<activity
 			android:name=".activities.EventRegister"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />

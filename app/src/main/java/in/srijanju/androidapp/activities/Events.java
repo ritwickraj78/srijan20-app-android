@@ -24,68 +24,82 @@ import in.srijanju.androidapp.model.SrijanEvent;
 
 public class Events extends SrijanActivity {
 
+  final ArrayList<SrijanEvent> events = new ArrayList<>();
+
+  final EventAdapter adapter = new EventAdapter(this, events);
+
+  ChildEventListener eventListener = new ChildEventListener() {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_events);
-
-		// The list of events
-		final ArrayList<SrijanEvent> events = new ArrayList<>();
-
-		GridView gridView = findViewById(R.id.gv_events);
-
-		// Open the event description page to show the details of the event
-		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(Events.this, EventDescription.class);
-				// Put the event object of the event that was clicked
-				Bundle bundle = new Bundle();
-				bundle.putSerializable("event", events.get(position));
-				intent.putExtras(bundle);
-				startActivity(intent);
-			}
-		});
-
-		final EventAdapter adapter = new EventAdapter(this, events);
-		gridView.setAdapter(adapter);
-
-		FirebaseDatabase db = FirebaseDatabase.getInstance();
-		DatabaseReference ref = db.getReference("srijan/events");
-
-		// Get the list of events
-		ref.addChildEventListener(new ChildEventListener() {
-			@Override
-			public void onChildAdded(
-				@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-				SrijanEvent e = dataSnapshot.getValue(SrijanEvent.class);
-				events.add(e);
-				adapter.notifyDataSetChanged();
-			}
-
-			@Override
-			public void onChildChanged(
-				@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-			}
-
-			@Override
-			public void onChildRemoved(
-				@NonNull DataSnapshot dataSnapshot) {
-
-			}
-
-			@Override
-			public void onChildMoved(
-				@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-			}
-
-			@Override
-			public void onCancelled(
-				@NonNull DatabaseError databaseError) {
-
-			}
-		});
+	public void onChildAdded(
+			@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+	  SrijanEvent e = dataSnapshot.getValue(SrijanEvent.class);
+	  events.add(e);
+	  adapter.notifyDataSetChanged();
 	}
+
+	@Override
+	public void onChildChanged(
+			@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+	}
+
+	@Override
+	public void onChildRemoved(
+			@NonNull DataSnapshot dataSnapshot) {
+
+	}
+
+	@Override
+	public void onChildMoved(
+			@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+	}
+
+	@Override
+	public void onCancelled(
+			@NonNull DatabaseError databaseError) {
+
+	}
+  };
+  DatabaseReference ref;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_events);
+
+	GridView gridView = findViewById(R.id.gv_events);
+
+	// Open the event description page to show the details of the event
+	gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	  @Override
+	  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Intent intent = new Intent(Events.this, EventDescription.class);
+		// Put the event object of the event that was clicked
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("event", events.get(position));
+		intent.putExtras(bundle);
+		startActivity(intent);
+	  }
+	});
+	gridView.setAdapter(adapter);
+
+	FirebaseDatabase db = FirebaseDatabase.getInstance();
+	ref = db.getReference("srijan/events");
+  }
+
+  @Override
+  protected void onResume() {
+	super.onResume();
+
+	// Get the list of events
+	ref.addChildEventListener(eventListener);
+  }
+
+  @Override
+  protected void onPause() {
+	super.onPause();
+	ref.removeEventListener(eventListener);
+	events.clear();
+  }
 }

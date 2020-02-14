@@ -5,8 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/mp_background"
-	tools:context=".activities.Events"
-	tools:ignore="PrivateResource">
+	tools:context=".activities.Events">
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -46,19 +45,20 @@
 		android:id="@+id/tv_about"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
+		android:fontFamily="sans-serif-thin"
 		android:gravity="center"
 		android:padding="8dp"
-		android:text="@string/main_page_about"
-		android:fontFamily="sans-serif-thin"
 		android:shadowColor="#f99245"
 		android:shadowDx="-4"
 		android:shadowDy="-4"
 		android:shadowRadius="1"
+		android:text="@string/main_page_about"
 		android:textColor="@color/cardview_light_background"
 		android:textSize="45sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/srijanVid" />
+		app:layout_constraintTop_toBottomOf="@id/srijanVid"
+		tools:ignore="PrivateResource" />
 
 	<ScrollView
 		android:layout_width="0dp"
@@ -81,14 +81,12 @@
 				android:padding="8dp"
 				android:scaleX="1"
 				android:scaleY="1"
-				android:textColor="#ffffff"
-				android:textSize="20sp"
+				android:shadowColor="#f99245"
 				android:shadowDx="-2"
 				android:shadowDy="-2"
-				android:letterSpacing="0.03"
-				android:shadowColor="#f99245"
 				android:shadowRadius="1"
-				android:text="HELLO EVERYONE GOD BLESS MY FRIEDDFMSFSDV SF SDF DF DFVDSVSDVSDVDSVDSVDSVSDVSDV"/>
+				android:textColor="#ffffff"
+				android:textSize="20sp" />
 
 			<LinearLayout
 				android:id="@+id/clubsInfo"
@@ -133,38 +131,6 @@
 					android:background="@android:color/white"
 					android:contentDescription="@string/ju_science_club_logo"
 					android:src="@drawable/jusc_logo" />
-			</LinearLayout>
-
-			<LinearLayout
-				android:id="@+id/creatorsInfo"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_below="@+id/clubsInfo"
-				android:layout_margin="8dp"
-				android:orientation="vertical">
-
-				<TextView
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="25dp"
-					android:layout_marginBottom="15dp"
-					android:gravity="center"
-					android:fontFamily="sans-serif-thin"
-					android:shadowColor="#f99245"
-					android:shadowDx="-4"
-					android:shadowDy="-4"
-					android:shadowRadius="1"
-					android:text="@string/app_developed_by"
-					android:textColor="#ffffff"
-					android:textSize="45sp" />
-
-				<LinearLayout
-					android:id="@+id/creatorsList"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:divider="@null"
-					android:dividerHeight="0dp"
-					android:orientation="vertical" />
 			</LinearLayout>
 
 		</RelativeLayout>

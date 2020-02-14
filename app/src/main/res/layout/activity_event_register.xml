@@ -150,6 +150,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:hint="@string/team_member_2"
+					android:importantForAutofill="no"
 					android:inputType="textEmailAddress" />
 			</com.google.android.material.textfield.TextInputLayout>
 
@@ -167,6 +168,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:hint="@string/team_member_3"
+					android:importantForAutofill="no"
 					android:inputType="textEmailAddress" />
 			</com.google.android.material.textfield.TextInputLayout>
 

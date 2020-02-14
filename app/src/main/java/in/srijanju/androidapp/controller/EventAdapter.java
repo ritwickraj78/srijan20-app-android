@@ -25,64 +25,64 @@ import in.srijanju.androidapp.model.SrijanEvent;
 
 public class EventAdapter extends BaseAdapter {
 
-	private Activity context;
-	private ArrayList<SrijanEvent> events;
+  private Activity context;
+  private ArrayList<SrijanEvent> events;
 
-	public EventAdapter(Activity context, ArrayList<SrijanEvent> list) {
-		this.context = context;
-		events = list;
+  public EventAdapter(Activity context, ArrayList<SrijanEvent> list) {
+	this.context = context;
+	events = list;
+  }
+
+  @Override
+  public int getCount() {
+	return events.size();
+  }
+
+  @Override
+  public Object getItem(int position) {
+	return events.get(position);
+  }
+
+  @Override
+  public long getItemId(int position) {
+	return 0;
+  }
+
+  @Override
+  public View getView(int position, View convertView, ViewGroup parent) {
+	LayoutInflater inflater = context.getLayoutInflater();
+	View v;
+	if (convertView == null) {
+	  v = inflater.inflate(R.layout.icon_event, null, true);
+	} else {
+	  v = convertView;
 	}
+	TextView eventName = v.findViewById(R.id.tv_event_name);
+	TextView eventType = v.findViewById(R.id.tv_event_type);
+	final ImageView ivEvent = v.findViewById(R.id.iv_event_icon_back);
 
-	@Override
-	public int getCount() {
-		return events.size();
-	}
+	String poster = events.get(position).poster;
+	if (poster == null || poster.equals("") || !URLUtil.isHttpsUrl(poster))
+	  poster = "https://image.freepik.com/free-photo/gray-painted-background_53876-94041.jpg";
 
-	@Override
-	public Object getItem(int position) {
-		return events.get(position);
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return 0;
-	}
-
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		LayoutInflater inflater = context.getLayoutInflater();
-		View v;
-		if (convertView == null) {
-			v = inflater.inflate(R.layout.icon_event, null, true);
-		} else {
-			v = convertView;
-		}
-		TextView eventName = v.findViewById(R.id.tv_event_name);
-		TextView eventType = v.findViewById(R.id.tv_event_type);
-		final ImageView ivEvent = v.findViewById(R.id.iv_event_icon_back);
-
-		String poster = events.get(position).poster;
-		if (poster == null || poster.equals("") || !URLUtil.isHttpsUrl(poster))
-			poster = "https://image.freepik.com/free-photo/gray-painted-background_53876-94041.jpg";
-
-		Glide.with(context).asBitmap().load(poster).into(
+	Glide.with(context).asBitmap().load(poster).into(
 			new CustomTarget<Bitmap>() {
-				@Override
-				public void onResourceReady(
-					@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-					ivEvent.setImageBitmap(resource);
-				}
+			  @Override
+			  public void onResourceReady(
+					  @NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+				ivEvent.setImageBitmap(resource);
+			  }
 
-				@Override
-				public void onLoadCleared(
-					@Nullable Drawable placeholder) {
+			  @Override
+			  public void onLoadCleared(
+					  @Nullable Drawable placeholder) {
 
-				}
+			  }
 			});
 
-		eventName.setText(events.get(position).name);
-		eventType.setText(events.get(position).type);
+	eventName.setText(events.get(position).name);
+	eventType.setText(events.get(position).type);
 
-		return v;
-	}
+	return v;
+  }
 }

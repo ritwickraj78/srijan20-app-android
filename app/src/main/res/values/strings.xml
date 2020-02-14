@@ -53,4 +53,7 @@
 	<string name="team_member_2">Team member 2 email</string>
 	<string name="team_member_3">Team member 3 email</string>
 	<string name="team_lead_contact_number">Team lead contact number</string>
+	<string name="registered">Registered</string>
+	<string name="profile">Profile</string>
+	<string name="events">Events</string>
 </resources>
