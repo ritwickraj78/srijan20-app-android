@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/mp_background"
-	tools:context=".activities.MainPage">
+	tools:context=".view.MainPage">
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -81,17 +81,20 @@
 		android:layout_marginBottom="24dp"
 		android:background="@drawable/timer_background"
 		android:contentDescription="@string/main_page_timer_background"
+		android:lineSpacingMultiplier="1.5"
 		android:padding="30dp"
-		android:scaleY="0.35"
+		android:scaleY="0.5"
 		android:shadowColor="#f99245"
 		android:shadowDx="-3"
 		android:shadowDy="-3"
 		android:shadowRadius="1"
 		android:textColor="#ffffff"
-		android:textSize="35sp"
+		android:textSize="32sp"
+		android:textStyle="italic"
 		app:layout_constraintBottom_toTopOf="@+id/iv_about"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/iv_tr_tri" />
+		app:layout_constraintTop_toBottomOf="@+id/iv_tr_tri"
+		tools:text="19 DAYS 1 HOUR TO GO" />
 
 	<ImageView
 		android:layout_width="0dp"
@@ -201,13 +204,12 @@
 		android:layout_marginTop="15dp"
 
 		android:background="@drawable/qrbackground"
-		android:padding="10dp"
 		android:contentDescription="@string/scan_qr_code"
+		android:padding="10dp"
 		android:src="@drawable/srijan_qr"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="@+id/qrline"
 		app:layout_constraintTop_toBottomOf="@id/iv_events" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

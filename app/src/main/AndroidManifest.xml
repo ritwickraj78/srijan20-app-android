@@ -17,24 +17,32 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
 		android:usesCleartextTraffic="true">
-		<activity android:name=".activities.Profile"></activity>
+
+		<meta-data
+			android:name="com.google.firebase.messaging.default_notification_icon"
+			android:resource="@drawable/ic_launcher" />
+		<meta-data
+			android:name="com.google.firebase.messaging.default_notification_color"
+			android:resource="@color/colorAccent" />
+
+		<activity android:name=".view.Profile" />
 		<activity
-			android:name=".activities.EventRegister"
+			android:name=".view.EventRegister"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
-		<activity android:name=".activities.CameraScan" />
+		<activity android:name=".view.CameraScan" />
 		<activity
-			android:name=".activities.SrijanRegister"
+			android:name=".view.SrijanRegister"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
-		<activity android:name=".activities.EventDescription" />
-		<activity android:name=".activities.Events" />
-		<activity android:name=".activities.About" />
-		<activity android:name=".activities.MainPage" />
-		<activity android:name=".activities.Gallery" />
-		<activity android:name=".activities.Ambassador" />
-		<activity android:name=".activities.webview" />
-		<activity android:name=".activities.Sponsors" />
+		<activity android:name=".view.EventDescription" />
+		<activity android:name=".view.Events" />
+		<activity android:name=".view.About" />
+		<activity android:name=".view.MainPage" />
+		<activity android:name=".view.Gallery" />
+		<activity android:name=".view.Ambassador" />
+		<activity android:name=".view.webview" />
+		<activity android:name=".view.Sponsors" />
 		<activity
-			android:name=".activities.MainActivity"
+			android:name=".view.MainActivity"
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -55,6 +63,14 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".SrijanActivity" />
+
+		<service
+			android:name=".SrijanMessagingService"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
 	</application>
 
 </manifest>

@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/mp_background"
-	tools:context=".activities.EventDescription"
+	tools:context=".view.EventDescription"
 	tools:ignore="PrivateResource">
 
 	<ImageView
