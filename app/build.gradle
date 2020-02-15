@@ -8,8 +8,8 @@ android {
         applicationId "in.srijanju.androidapp"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 4
-        versionName "0.1"
+        versionCode 5
+        versionName "0.2"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
