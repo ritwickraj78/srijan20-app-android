@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 import in.srijanju.androidapp.R;
@@ -89,8 +89,11 @@ public class MainActivity extends AppCompatActivity {
 			  @Override
 			  public void onClick(View v) {
 				// Choose authentication providers
-				List<AuthUI.IdpConfig> providers = Collections
-						.singletonList(new AuthUI.IdpConfig.GoogleBuilder().build());
+				List<AuthUI.IdpConfig> providers =
+						Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build(),
+								//TODO: Complete facebook auth
+								// new AuthUI.IdpConfig.FacebookBuilder().build(),
+								new AuthUI.IdpConfig.EmailBuilder().build());
 
 				// Create and launch sign-in intent
 				startActivityForResult(
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 								.createSignInIntentBuilder()
 								.setAvailableProviders(providers)
 								.setIsSmartLockEnabled(false)
+								.setLogo(R.drawable.ic_launcher)
 								.build(),
 						RC_SIGN_IN);
 			  }

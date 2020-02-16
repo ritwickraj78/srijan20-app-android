@@ -2,6 +2,7 @@ package in.srijanju.androidapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -116,6 +117,16 @@ public class Profile extends AppCompatActivity {
 
 	GridView gridView = findViewById(R.id.gv_events);
 	gridView.setAdapter(adapter);
+
+	findViewById(R.id.btn_profile_logout).setOnClickListener(new View.OnClickListener() {
+	  @Override
+	  public void onClick(View v) {
+		FirebaseAuth.getInstance().signOut();
+		AuthUI.getInstance().signOut(getApplicationContext());
+		startActivity(new Intent(Profile.this, MainActivity.class));
+		finish();
+	  }
+	});
   }
 
   @Override
