@@ -60,4 +60,12 @@
 	<string name="sponsor_poster">Sponsor poster</string>
 	<string name="to_sponsor_contact_us_at_srijan_jduniv_gmail_com_or_soumyadip_maity_9333324765">To sponsor, contact us at srijan.jduniv@gmail.com or Soumyadip Maity(9333324765)</string>
 	<string name="coming_soon">Coming soon</string>
+
+	<!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+	<!-- TODO: Update facebook APP_ID -->
+	<!--
+	<string name="facebook_application_id" translatable="false">2489104001207526</string>
+	<string name="facebook_login_protocol_scheme" translatable="false">fb2489104001207526</string>
+	-->
+
 </resources>
