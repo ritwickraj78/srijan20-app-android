@@ -49,4 +49,42 @@
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<ListView
+		android:id="@+id/lv_sponsors"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginBottom="4dp"
+		android:dividerHeight="16dp"
+		android:padding="16dp"
+		app:layout_constraintBottom_toTopOf="@id/tv_sponsor_text"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tv_sponsors" />
+
+	<TextView
+		android:id="@+id/tv_sponsor_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:autoLink="all"
+		android:background="#66000000"
+		android:padding="8dp"
+		android:text="@string/to_sponsor_contact_us_at_srijan_jduniv_gmail_com_or_soumyadip_maity_9333324765"
+		android:textColor="@android:color/white"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<TextView
+		android:id="@+id/tv_no_sponsor"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/coming_soon"
+		android:textColor="@android:color/white"
+		android:textSize="28sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
