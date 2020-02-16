@@ -131,7 +131,6 @@ public class MainPage extends SrijanActivity {
 	  public void onClick(View v) {
 		// TODO: Complete Sponsor page
 		// startActivity(new Intent(MainPage.this, Sponsors.class));
-		Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
 	  }
 	});
 

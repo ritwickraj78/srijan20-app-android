@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
 	  }
 
 	  // If app update notification is sent
-	  int update = extras.getInt(DATA_APP_UPDATE, 0);
-	  if (update == 1) {
+	  String update = extras.getString(DATA_APP_UPDATE, "0");
+	  if (update.equals("1")) {
 		final String appPackageName = getPackageName();
 		try {
 		  startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));

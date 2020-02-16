@@ -15,19 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "614644848015-hcjv4jiae05ejm2313h79veqdgmfsppt.apps.googleusercontent.com",
+          "client_id": "614644848015-5mgcukg4e5bcpdtl7te1fn5vlllhb7kq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "in.srijanju.androidapp",
             "certificate_hash": "02c2746e776fc2739c88a9c7535b6ad0b2ce1957"
-          }
-        },
-        {
-          "client_id": "614644848015-43kgnnmbq5euihc62s79cbf63pjc1clk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "in.srijanju.androidapp",
-            "certificate_hash": "c24520548d2355db65ea85370ca8a8e3e0adf93d"
           }
         },
         {
