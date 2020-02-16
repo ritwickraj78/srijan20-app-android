@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/cv_sponsor"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:clickable="true"
+	android:focusable="true"
+	android:foreground="?android:attr/selectableItemBackground"
+	app:cardBackgroundColor="#33ffffff"
+	app:cardCornerRadius="4dp"
+	tools:ignore="PrivateResource">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/tv_sponsor_type"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@android:color/black"
+			android:fontFamily="sans-serif-light"
+			android:gravity="center_horizontal"
+			android:padding="4dp"
+			android:textAllCaps="true"
+			android:textColor="@android:color/white"
+			android:textSize="24sp"
+			tools:text="Platinum sponsor" />
+
+		<ImageView
+			android:id="@+id/iv_sponsor_poster"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:contentDescription="@string/sponsor_poster"
+			android:scaleType="fitCenter" />
+
+		<TextView
+			android:id="@+id/tv_sponsor_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="8dp"
+			android:fontFamily="sans-serif-thin"
+			android:textColor="@android:color/white"
+			android:textSize="28sp"
+			tools:text="Mobilewalla" />
+
+		<TextView
+			android:id="@+id/tv_sponsor_link"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginBottom="4dp"
+			android:autoLink="all"
+			tools:text="www.google.com" />
+	</LinearLayout>
+
+</androidx.cardview.widget.CardView>

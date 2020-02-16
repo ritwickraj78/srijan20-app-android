@@ -21,26 +21,25 @@ import com.bumptech.glide.request.transition.Transition;
 import java.util.ArrayList;
 
 import in.srijanju.androidapp.R;
-import in.srijanju.androidapp.model.SrijanEvent;
+import in.srijanju.androidapp.model.Sponsor;
 
-public class EventAdapter extends BaseAdapter {
-
+public class SponsorAdapter extends BaseAdapter {
   private Activity context;
-  private ArrayList<SrijanEvent> events;
+  private ArrayList<Sponsor> sponsors;
 
-  public EventAdapter(Activity context, ArrayList<SrijanEvent> list) {
+  public SponsorAdapter(Activity context, ArrayList<Sponsor> list) {
 	this.context = context;
-	events = list;
+	sponsors = list;
   }
 
   @Override
   public int getCount() {
-	return events.size();
+	return sponsors.size();
   }
 
   @Override
   public Object getItem(int position) {
-	return events.get(position);
+	return sponsors.get(position);
   }
 
   @Override
@@ -53,24 +52,25 @@ public class EventAdapter extends BaseAdapter {
 	LayoutInflater inflater = context.getLayoutInflater();
 	View v;
 	if (convertView == null) {
-	  v = inflater.inflate(R.layout.item_event, null, true);
+	  v = inflater.inflate(R.layout.item_sponsor, null, true);
 	} else {
 	  v = convertView;
 	}
-	TextView eventName = v.findViewById(R.id.tv_event_name);
-	TextView eventType = v.findViewById(R.id.tv_event_type);
-	final ImageView ivEvent = v.findViewById(R.id.iv_event_icon_back);
+	TextView name = v.findViewById(R.id.tv_sponsor_name);
+	TextView type = v.findViewById(R.id.tv_sponsor_type);
+	final ImageView ivPoster = v.findViewById(R.id.iv_sponsor_poster);
+	TextView link = v.findViewById(R.id.tv_sponsor_link);
 
-	String poster = events.get(position).poster;
+	String poster = sponsors.get(position).poster;
 	if (poster == null || poster.equals("") || !URLUtil.isHttpsUrl(poster))
-	  poster = "https://image.freepik.com/free-photo/gray-painted-background_53876-94041.jpg";
+	  poster = "https://firebasestorage.googleapis.com/v0/b/srijanju20.appspot.com/o/srijan_poster.jpg?alt=media&token=03a68c2f-8beb-40b0-9353-da58fe7cc932";
 
 	Glide.with(context).asBitmap().load(poster).into(
 			new CustomTarget<Bitmap>() {
 			  @Override
 			  public void onResourceReady(
 					  @NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-				ivEvent.setImageBitmap(resource);
+				ivPoster.setImageBitmap(resource);
 			  }
 
 			  @Override
@@ -80,8 +80,9 @@ public class EventAdapter extends BaseAdapter {
 			  }
 			});
 
-	eventName.setText(events.get(position).name);
-	eventType.setText(events.get(position).type);
+	name.setText(sponsors.get(position).name);
+	type.setText(sponsors.get(position).type);
+	link.setText(sponsors.get(position).url);
 
 	return v;
   }

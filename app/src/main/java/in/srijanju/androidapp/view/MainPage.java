@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -129,9 +128,7 @@ public class MainPage extends SrijanActivity {
 	ivSponsor.setOnClickListener(new View.OnClickListener() {
 	  @Override
 	  public void onClick(View v) {
-		// TODO: Complete Sponsor page
-		// startActivity(new Intent(MainPage.this, Sponsors.class));
-		Toast.makeText(getApplicationContext(), "Coming soon", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(MainPage.this, Sponsors.class));
 	  }
 	});
 
