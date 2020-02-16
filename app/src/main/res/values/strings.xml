@@ -62,10 +62,7 @@
 	<string name="coming_soon">Coming soon</string>
 
 	<!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
-	<!-- TODO: Update facebook APP_ID -->
-	<!--
 	<string name="facebook_application_id" translatable="false">2489104001207526</string>
 	<string name="facebook_login_protocol_scheme" translatable="false">fb2489104001207526</string>
-	-->
 
 </resources>

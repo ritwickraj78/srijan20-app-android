@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	package="in.srijanju.androidapp">
 
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -23,6 +24,11 @@
 		<meta-data
 			android:name="com.google.firebase.messaging.default_notification_color"
 			android:resource="@color/colorAccent" />
+
+		<meta-data
+			android:name="com.facebook.sdk.ApplicationId"
+			tools:replace="android:value"
+			android:value="@string/facebook_application_id" />
 
 		<activity android:name=".view.Profile" />
 		<activity

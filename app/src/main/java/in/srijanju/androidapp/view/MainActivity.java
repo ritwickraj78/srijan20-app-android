@@ -91,8 +91,7 @@ public class MainActivity extends AppCompatActivity {
 				// Choose authentication providers
 				List<AuthUI.IdpConfig> providers =
 						Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build(),
-								//TODO: Complete facebook auth
-								// new AuthUI.IdpConfig.FacebookBuilder().build(),
+								new AuthUI.IdpConfig.FacebookBuilder().build(),
 								new AuthUI.IdpConfig.EmailBuilder().build());
 
 				// Create and launch sign-in intent
