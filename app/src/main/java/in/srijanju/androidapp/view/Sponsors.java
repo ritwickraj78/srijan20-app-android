@@ -1,11 +1,16 @@
 package in.srijanju.androidapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -88,6 +93,18 @@ public class Sponsors extends SrijanActivity {
   protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_sponsors);
+
+	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+	if (user == null) {
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(Sponsors.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
+	  finish();
+	  return;
+	}
 
 	ListView lvSponsors = findViewById(R.id.lv_sponsors);
 	lvSponsors.setAdapter(adapter);

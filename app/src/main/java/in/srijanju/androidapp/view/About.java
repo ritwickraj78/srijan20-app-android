@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import in.srijanju.androidapp.R;
 
@@ -28,6 +32,18 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
   protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_about);
+
+	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+	if (user == null) {
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(About.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
+	  finish();
+	  return;
+	}
 
 	playerView = findViewById(R.id.srijanVid);
 	playerView.initialize(API_KEY, About.this);

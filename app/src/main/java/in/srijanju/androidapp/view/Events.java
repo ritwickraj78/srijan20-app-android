@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -70,6 +74,19 @@ public class Events extends SrijanActivity {
   protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_events);
+
+	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+	if (user == null) {
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(Events.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
+	  finish();
+	  return;
+	}
+
 
 	GridView gridView = findViewById(R.id.gv_events);
 

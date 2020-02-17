@@ -16,6 +16,9 @@ import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.budiyev.android.codescanner.ErrorCallback;
 import com.budiyev.android.codescanner.ScanMode;
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
@@ -40,6 +43,18 @@ public class CameraScan extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_camera_scan);
+
+	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+	if (user == null) {
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(CameraScan.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
+	  finish();
+	  return;
+	}
 
 	CodeScannerView scannerView = findViewById(R.id.scanner_view);
 	mCodeScanner = new CodeScanner(this, scannerView);

@@ -1,5 +1,6 @@
 package in.srijanju.androidapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
@@ -34,7 +36,7 @@ import in.srijanju.androidapp.model.SrijanEvent;
 
 public class EventRegister extends SrijanActivity {
 
-  final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+  FirebaseUser user;
 
   EditText etLeadContact;
   EditText etMem2;
@@ -50,6 +52,18 @@ public class EventRegister extends SrijanActivity {
   protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_event_register);
+
+	user = FirebaseAuth.getInstance().getCurrentUser();
+	if (user == null) {
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(EventRegister.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
+	  finish();
+	  return;
+	}
 
 	// Get event details. If error, exit
 	Bundle extras = getIntent().getExtras();

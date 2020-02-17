@@ -29,7 +29,9 @@ public class SrijanApp extends Application {
 	registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
 	  @Override
 	  public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
-		activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		if (activity.getClass().toString().contains(getPackageName())) {
+		  activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 	  }
 
 	  @Override

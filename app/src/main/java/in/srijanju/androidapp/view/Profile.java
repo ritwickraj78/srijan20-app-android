@@ -77,7 +77,9 @@ public class Profile extends AppCompatActivity {
 	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
 	  AuthUI.getInstance().signOut(getApplicationContext());
-	  startActivity(new Intent(Profile.this, MainActivity.class));
+	  Intent intent = new Intent(Profile.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
 	  finish();
 	  return;
 	}

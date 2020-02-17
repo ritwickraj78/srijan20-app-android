@@ -72,11 +72,14 @@ public class EventDescription extends SrijanActivity {
 
 	user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
-	  Toast.makeText(this, "Not signed in", Toast.LENGTH_SHORT).show();
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
 	  AuthUI.getInstance().signOut(getApplicationContext());
-	  startActivity(new Intent(EventDescription.this, MainActivity.class));
+	  Intent intent = new Intent(EventDescription.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
 	  finish();
+	  return;
 	}
 
 	regClickListener = new View.OnClickListener() {
