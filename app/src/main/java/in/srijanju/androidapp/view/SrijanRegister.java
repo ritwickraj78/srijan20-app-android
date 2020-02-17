@@ -17,7 +17,6 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,13 +37,17 @@ public class SrijanRegister extends AppCompatActivity {
 
 	final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
-	  Toast.makeText(this, "UserSend not found", Toast.LENGTH_SHORT).show();
+	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  FirebaseAuth.getInstance().signOut();
+	  AuthUI.getInstance().signOut(getApplicationContext());
+	  Intent intent = new Intent(SrijanRegister.this, MainActivity.class);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  startActivity(intent);
 	  finish();
 	  return;
 	}
 
 	final TextInputEditText etName = findViewById(R.id.et_name);
-	final TextInputLayout lName = findViewById(R.id.in_reg_name);
 	// Set user's name
 	etName.setText(user.getDisplayName());
 
@@ -55,13 +58,10 @@ public class SrijanRegister extends AppCompatActivity {
 	etEmail.setInputType(InputType.TYPE_NULL);
 
 	final TextInputEditText etClg = findViewById(R.id.et_clg);
-	final TextInputLayout lClg = findViewById(R.id.in_reg_clg);
 
 	final TextInputEditText etDegree = findViewById(R.id.et_degree);
-	final TextInputLayout lDeg = findViewById(R.id.in_reg_degree);
 
 	final TextInputEditText etCourse = findViewById(R.id.et_course);
-	final TextInputLayout lCourse = findViewById(R.id.in_reg_course);
 
 	// Set the possible values of year
 	final MaterialSpinner spinner = findViewById(R.id.spinner_year);
@@ -91,75 +91,35 @@ public class SrijanRegister extends AppCompatActivity {
 		String uid = user.getUid();
 		Map<String, String> updatetime = ServerValue.TIMESTAMP;
 
-		/*
-		 * Validate all data before sending
-		 */
-		boolean f = false;
-		//Validate name
-		if (!(name.length() >= 6 && name.length() <= 30 && name.matches("[a-z A-Z]{6,50}"))) {
-		  f = true;
-		  lName
-				  .setError("At least 6 alphabets but lesser than 30 required.");
-		}
-		//Validate college
-		if (!(college.length() >= 6 && college.length() <= 50 && college
-				.matches("[a-z A-Z]{6,50}"))) {
-		  f = true;
-		  lClg
-				  .setError("At least 6 alphabets but lesser than 50 required.");
-		}
-		//Validate degree
-		if (!(degree.length() >= 2 && degree.length() <= 50 && degree.matches("[a-z A-Z]{2,50}"))) {
-		  f = true;
-		  lDeg
-				  .setError("At least 2 alphabets but lesser than 50 required.");
-		}
-		//Validate course
-		if (!(course.length() >= 2 && course.length() <= 50 && course.matches("[a-z A-Z]{2,50}"))) {
-		  f = true;
-		  lCourse
-				  .setError("At least 2 alphabets but lesser than 50 required.");
-		}
+		UserSend newUserSend = new UserSend(name, email, college, degree, course, year, 1,
+				updatetime);
+		// Add user to the database
+		FirebaseDatabase.getInstance()
+				.getReference("srijan/profile/" + uid + "/parentprofile")
+				.setValue(newUserSend)
+				.addOnSuccessListener(new OnSuccessListener<Void>() {
+				  @Override
+				  public void onSuccess(Void aVoid) {
+					Toast toast = Toast.makeText(getApplicationContext(), "Registered!",
+							Toast.LENGTH_SHORT);
+					toast.setGravity(Gravity.CENTER, 0, 0);
+					toast.show();
 
-		if (f) {
-		  // Invalid data
-		  Toast toast = Toast.makeText(getApplicationContext(), "Invalid data!",
-				  Toast.LENGTH_SHORT);
-		  toast.setGravity(Gravity.CENTER, 0, 0);
-		  toast.show();
-		} else {
-		  // Data is valid, register the user
+					// If added successfully, open app content
+					startActivity(new Intent(SrijanRegister.this, MainPage.class));
+					finish();
+				  }
+				})
+				.addOnFailureListener(new OnFailureListener() {
+				  @Override
+				  public void onFailure(@NonNull Exception e) {
+					Toast toast = Toast.makeText(getApplicationContext(), "Please enter correct details",
+							Toast.LENGTH_SHORT);
+					toast.setGravity(Gravity.CENTER, 0, 0);
+					toast.show();
+				  }
+				});
 
-		  UserSend newUserSend = new UserSend(name, email, college, degree, course, year, 1,
-				  updatetime);
-		  // Add user to the database
-		  FirebaseDatabase.getInstance()
-				  .getReference("srijan/profile/" + uid + "/parentprofile")
-				  .setValue(newUserSend)
-				  .addOnSuccessListener(new OnSuccessListener<Void>() {
-					@Override
-					public void onSuccess(Void aVoid) {
-					  Toast toast = Toast.makeText(getApplicationContext(), "Registered!",
-							  Toast.LENGTH_SHORT);
-					  toast.setGravity(Gravity.CENTER, 0, 0);
-					  toast.show();
-
-					  // If added successfully, open app content
-					  startActivity(new Intent(SrijanRegister.this, MainPage.class));
-					  finish();
-					}
-				  })
-				  .addOnFailureListener(new OnFailureListener() {
-					@Override
-					public void onFailure(@NonNull Exception e) {
-					  Toast toast = Toast.makeText(getApplicationContext(), "Please enter correct details",
-							  Toast.LENGTH_SHORT);
-					  toast.setGravity(Gravity.CENTER, 0, 0);
-					  toast.show();
-					}
-				  });
-
-		}
 	  }
 	});
 

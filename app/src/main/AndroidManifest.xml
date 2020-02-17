@@ -27,27 +27,50 @@
 
 		<meta-data
 			android:name="com.facebook.sdk.ApplicationId"
-			tools:replace="android:value"
-			android:value="@string/facebook_application_id" />
+			android:value="@string/facebook_application_id"
+			tools:replace="android:value" />
 
-		<activity android:name=".view.Profile" />
+		<activity
+			android:name=".view.Profile"
+			android:screenOrientation="locked" />
 		<activity
 			android:name=".view.EventRegister"
+			android:screenOrientation="locked"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
-		<activity android:name=".view.CameraScan" />
+		<activity
+			android:name=".view.CameraScan"
+			android:screenOrientation="locked" />
 		<activity
 			android:name=".view.SrijanRegister"
+			android:screenOrientation="locked"
 			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
-		<activity android:name=".view.EventDescription" />
-		<activity android:name=".view.Events" />
-		<activity android:name=".view.About" />
-		<activity android:name=".view.MainPage" />
-		<activity android:name=".view.Gallery" />
-		<activity android:name=".view.Ambassador" />
-		<activity android:name=".view.webview" />
-		<activity android:name=".view.Sponsors" />
+		<activity
+			android:name=".view.EventDescription"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.Events"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.About"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.MainPage"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.Gallery"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.Ambassador"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.webview"
+			android:screenOrientation="locked" />
+		<activity
+			android:name=".view.Sponsors"
+			android:screenOrientation="locked" />
 		<activity
 			android:name=".view.MainActivity"
+			android:screenOrientation="locked"
 			android:theme="@style/AppTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -67,7 +90,9 @@
 					android:scheme="https" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".SrijanActivity" />
+		<activity
+			android:name=".SrijanActivity"
+			android:screenOrientation="locked" />
 
 		<service
 			android:name=".SrijanMessagingService"
