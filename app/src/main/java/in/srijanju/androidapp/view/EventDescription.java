@@ -82,7 +82,8 @@ public class EventDescription extends SrijanActivity {
 	regClickListener = new View.OnClickListener() {
 	  public void onClick(View v) {
 		if (event.maxts == 0) {
-		  Toast.makeText(EventDescription.this, "Registration for this event not yet started", Toast.LENGTH_LONG).show();
+		  Toast.makeText(EventDescription.this, "Registration for this event not yet started",
+				  Toast.LENGTH_SHORT).show();
 		  return;
 		}
 		Intent myIntent = new Intent(EventDescription.this, EventRegister.class);

@@ -64,5 +64,9 @@
 	<!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
 	<string name="facebook_application_id" translatable="false">2489104001207526</string>
 	<string name="facebook_login_protocol_scheme" translatable="false">fb2489104001207526</string>
+	<string name="srijan_merchandise">Srijan merchandise</string>
+	<string name="buy_our_tshirt_now">Buy our tshirt now!</string>
+	<string name="looking_for_workshops">Looking for workshops and other events?\nClick here
+		to register</string>
 
 </resources>
