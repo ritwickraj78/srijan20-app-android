@@ -1,6 +1,7 @@
 package in.srijanju.androidapp.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +16,9 @@ import in.srijanju.androidapp.R;
 import in.srijanju.androidapp.SrijanActivity;
 
 public class MainPage extends SrijanActivity {
+  public static final String SRIJAN_MERCH_URL = "https://www.srijanju.in/app/merchandise";
+  public static final String SRIJAN_WORKSHOP_URL = "https://www.srijanju.in/app/workshops";
+
   private TextView a;
 
   @Override
@@ -137,6 +141,14 @@ public class MainPage extends SrijanActivity {
 	  @Override
 	  public void onClick(View v) {
 		startActivity(new Intent(MainPage.this, CameraScan.class));
+	  }
+	});
+
+	findViewById(R.id.iv_merch).setOnClickListener(new View.OnClickListener() {
+	  @Override
+	  public void onClick(View v) {
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(SRIJAN_MERCH_URL));
+		startActivity(browserIntent);
 	  }
 	});
   }
