@@ -18,6 +18,8 @@ import com.budiyev.android.codescanner.ErrorCallback;
 import com.budiyev.android.codescanner.ScanMode;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.BarcodeFormat;
@@ -50,7 +52,16 @@ public class CameraScan extends AppCompatActivity {
 		  @Override
 		  public void run() {
 			String eventCode = result.getText();
-			FirebaseDatabase.getInstance().getReference("srijan/events/" + eventCode).addListenerForSingleValueEvent(new ValueEventListener() {
+			DatabaseReference eventRef = null;
+			try {
+			  eventRef = FirebaseDatabase.getInstance().getReference("srijan/events/" + eventCode);
+			} catch (DatabaseException ignored) {
+			}
+			if (eventRef == null) {
+			  Toast.makeText(CameraScan.this, "Wrong code scanned", Toast.LENGTH_SHORT).show();
+			  return;
+			}
+			eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
 			  @Override
 			  public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 				if (!dataSnapshot.exists()) {
@@ -146,7 +157,7 @@ public class CameraScan extends AppCompatActivity {
 		mCodeScanner.startPreview();
 	  } else {
 		mPermissionGranted = false;
-		Toast.makeText(getApplicationContext(), "You need to allow camera perission",
+		Toast.makeText(CameraScan.this, "You need to allow camera permission",
 				Toast.LENGTH_SHORT).show();
 		finish();
 	  }
