@@ -76,7 +76,7 @@ public class EventDescription extends SrijanActivity {
 	  FirebaseAuth.getInstance().signOut();
 	  AuthUI.getInstance().signOut(getApplicationContext());
 	  Intent intent = new Intent(EventDescription.this, MainActivity.class);
-	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
 	  finish();
 	  return;

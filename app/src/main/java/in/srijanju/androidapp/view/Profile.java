@@ -78,7 +78,7 @@ public class Profile extends AppCompatActivity {
 	  FirebaseAuth.getInstance().signOut();
 	  AuthUI.getInstance().signOut(getApplicationContext());
 	  Intent intent = new Intent(Profile.this, MainActivity.class);
-	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
 	  finish();
 	  return;
@@ -125,7 +125,9 @@ public class Profile extends AppCompatActivity {
 	  public void onClick(View v) {
 		FirebaseAuth.getInstance().signOut();
 		AuthUI.getInstance().signOut(getApplicationContext());
-		startActivity(new Intent(Profile.this, MainActivity.class));
+		Intent intent = new Intent(Profile.this, MainActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		startActivity(intent);
 		finish();
 	  }
 	});
