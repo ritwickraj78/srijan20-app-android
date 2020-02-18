@@ -5,11 +5,11 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/defaultFragment">
 
-<!--    <fragment-->
-<!--        android:id="@+id/firstFragment"-->
-<!--        android:name="in.srijanju.androidapp.view.About"-->
-<!--        android:label="About"-->
-<!--        tools:layout="@layout/activity_about" />-->
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="in.srijanju.androidapp.view.About"
+        android:label="About"
+        tools:layout="@layout/activity_about" />
     <fragment
         android:id="@+id/secondFragment"
         android:name="in.srijanju.androidapp.view.Events"

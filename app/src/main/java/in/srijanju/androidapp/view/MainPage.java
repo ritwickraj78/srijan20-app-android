@@ -245,9 +245,9 @@ public class MainPage extends SrijanActivity implements
 
 		switch (id) {
 
-//			case R.id.first:
-//				navController.navigate(R.id.firstFragment);
-//				break;
+			case R.id.first:
+				navController.navigate(R.id.firstFragment);
+				break;
 
 			case R.id.second:
 				navController.navigate(R.id.secondFragment);
