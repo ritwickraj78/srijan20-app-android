@@ -253,9 +253,16 @@ public class MainPage extends SrijanActivity implements
 				navController.navigate(R.id.secondFragment);
 				break;
 
-//			case R.id.third:
-//				navController.navigate(R.id.thirdFragment);
-//				break;
+			case R.id.third:
+				navController.navigate(R.id.thirdFragment);
+				break;
+
+				case R.id.fourth:
+				navController.navigate(R.id.fourthFragment);
+				break;
+			case R.id.fifth:
+				navController.navigate(R.id.fifthFragment);
+				break;
 
 		}
 		return true;

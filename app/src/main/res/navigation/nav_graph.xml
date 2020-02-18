@@ -15,16 +15,26 @@
         android:name="in.srijanju.androidapp.view.Events"
         android:label="Events"
         tools:layout="@layout/activity_events" />
-<!--    <fragment-->
-<!--        android:id="@+id/thirdFragment"-->
-<!--        android:name="in.srijanju.androidapp.view.Ambassador"-->
-<!--        android:label="Campus Ambassador"-->
-<!--        tools:layout="@layout/activity_ca" />-->
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="in.srijanju.androidapp.view.Ambassador"
+        android:label="Campus Ambassador"
+        tools:layout="@layout/activity_ca" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="in.srijanju.androidapp.view.Gallery"
+        android:label="Gallery"
+        tools:layout="@layout/activity_gallery" />
     <fragment
         android:id="@+id/defaultFragment"
         android:name="in.srijanju.androidapp.view.Profile"
         android:label="Profile"
         tools:layout="@layout/activity_profile" >
     </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="in.srijanju.androidapp.view.Sponsors"
+        android:label="Sponsors"
+        tools:layout="@layout/activity_sponsors" />
 
 </navigation>
