@@ -1,11 +1,18 @@
 package in.srijanju.androidapp.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -17,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import in.srijanju.androidapp.R;
 
-public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class About extends Fragment {
 
   private static final String srijanAbt = "SRIJAN has always dedicated itself to the idea of " +
 		  "promoting, showcasing, and encouraging concepts and research beyond the known periphery. " +
@@ -26,81 +33,78 @@ public class About extends YouTubeBaseActivity implements YouTubePlayer.OnInitia
   private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
   private static final String VIDEO_ID = "7oAc0d_W8-k";
 
-  YouTubePlayerView playerView;
 
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+	}
+
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.activity_about, container, false);
+	}
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_about);
+  public void onActivityCreated(Bundle savedInstanceState) {
+	super.onActivityCreated(savedInstanceState);
+
 
 	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
-	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  Toast.makeText(getActivity(), "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
-	  AuthUI.getInstance().signOut(getApplicationContext());
-	  Intent intent = new Intent(About.this, MainActivity.class);
+	  AuthUI.getInstance().signOut(getContext());
+	  Intent intent = new Intent(getActivity(), MainActivity.class);
 	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
-	  finish();
 	  return;
 	}
 
-	playerView = findViewById(R.id.srijanVid);
-	playerView.initialize(API_KEY, About.this);
 
-	TextView srijanText = findViewById(R.id.srijanText);
+
+	TextView srijanText = getView().findViewById(R.id.srijanText);
 	srijanText.setText(srijanAbt);
 
 	//OnClickListeners
-	ImageView img1 = findViewById(R.id.JU_official);
+	ImageView img1 = getView().findViewById(R.id.JU_official);
 	img1.setOnClickListener(new View.OnClickListener() {
 	  public void onClick(View v) {
 
-		Intent myIntent = new Intent(About.this, webview.class);
+		Intent myIntent = new Intent(getActivity(), webview.class);
 		myIntent.putExtra("url", "http://www.jaduniv.edu.in");
 		startActivity(myIntent);
 	  }
 	});
-	ImageView img2 = findViewById(R.id.GS_official);
+	ImageView img2 = getView().findViewById(R.id.GS_official);
 	img2.setOnClickListener(new View.OnClickListener() {
 	  public void onClick(View v) {
-		Intent myIntent = new Intent(About.this, webview.class);
+		Intent myIntent = new Intent(getActivity(), webview.class);
 		myIntent.putExtra("url", "https://www.facebook.com/GamesSocietyJU/");
 		startActivity(myIntent);
 	  }
 	});
-	ImageView img3 = findViewById(R.id.CC_official);
+	ImageView img3 = getView().findViewById(R.id.CC_official);
 	img3.setOnClickListener(new View.OnClickListener() {
 	  public void onClick(View v) {
-		Intent myIntent = new Intent(About.this, webview.class);
+		Intent myIntent = new Intent(getActivity(), webview.class);
 		myIntent.putExtra("url", "https://www.facebook.com/JUCodeClub/");
 		startActivity(myIntent);
 	  }
 	});
-	ImageView img4 = findViewById(R.id.SC_official);
+	ImageView img4 = getView().findViewById(R.id.SC_official);
 	img4.setOnClickListener(new View.OnClickListener() {
 	  public void onClick(View v) {
-		Intent myIntent = new Intent(About.this, webview.class);
+		Intent myIntent = new Intent(getActivity(), webview.class);
 		myIntent.putExtra("url", "https://www.facebook.com/juscofficial/");
 		startActivity(myIntent);
 	  }
 	});
   }
 
-  @Override
-  public void onInitializationSuccess(
-		  YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-	youTubePlayer.cueVideo(VIDEO_ID);
-	youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
-  }
+
 
   @Override
-  public void onInitializationFailure(
-		  YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-  }
-
-  @Override
-  protected void onDestroy() {
+  public void onDestroy() {
 	super.onDestroy();
   }
 }

@@ -1,12 +1,17 @@
 package in.srijanju.androidapp.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,10 +30,10 @@ import in.srijanju.androidapp.SrijanActivity;
 import in.srijanju.androidapp.controller.SponsorAdapter;
 import in.srijanju.androidapp.model.Sponsor;
 
-public class Sponsors extends SrijanActivity {
+public class Sponsors extends Fragment {
 
   final ArrayList<Sponsor> sponsors = new ArrayList<>();
-  final SponsorAdapter adapter = new SponsorAdapter(this, sponsors);
+  final SponsorAdapter adapter = new SponsorAdapter(getActivity(), sponsors);
   DatabaseReference ref = null, checkRef = null;
 
   ChildEventListener eventListener = new ChildEventListener() {
@@ -88,27 +93,35 @@ public class Sponsors extends SrijanActivity {
 	public void onCancelled(@NonNull DatabaseError databaseError) {
 	}
   };
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+	}
 
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.activity_sponsors, container, false);
+	}
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_sponsors);
+  public void onActivityCreated(Bundle savedInstanceState) {
+	super.onActivityCreated(savedInstanceState);
+
 
 	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
-	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  Toast.makeText(getActivity(), "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
-	  AuthUI.getInstance().signOut(getApplicationContext());
-	  Intent intent = new Intent(Sponsors.this, MainActivity.class);
+	  AuthUI.getInstance().signOut(getContext());
+	  Intent intent = new Intent(getActivity(), MainActivity.class);
 	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
-	  finish();
 	  return;
 	}
 
-	ListView lvSponsors = findViewById(R.id.lv_sponsors);
+	ListView lvSponsors = getView().findViewById(R.id.lv_sponsors);
 	lvSponsors.setAdapter(adapter);
-	lvSponsors.setEmptyView(findViewById(R.id.tv_no_sponsor));
+	lvSponsors.setEmptyView(getView().findViewById(R.id.tv_no_sponsor));
 
 	FirebaseDatabase db = FirebaseDatabase.getInstance();
 	ref = db.getReference("srijan/sponsors");
@@ -117,7 +130,7 @@ public class Sponsors extends SrijanActivity {
 
 
   @Override
-  protected void onResume() {
+  public void onResume() {
 	super.onResume();
 
 	checkRef.addValueEventListener(sponsoredValueListener);
@@ -127,7 +140,7 @@ public class Sponsors extends SrijanActivity {
   }
 
   @Override
-  protected void onPause() {
+  public void onPause() {
 	super.onPause();
 
 	checkRef.removeEventListener(sponsoredValueListener);

@@ -1,238 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/drawer_layout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@drawable/mp_background"
-	tools:context=".view.MainPage">
+	tools:context=".view.MainActivity">
 
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:contentDescription="@string/main_page_background_circles"
-		android:scaleX="1.2"
-		android:scaleY="1.2"
-		android:src="@drawable/mp_circles_center"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_background_top"
-		android:src="@drawable/mp_background_top"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<ImageView
-		android:id="@+id/iv_tr_circles"
-		android:layout_width="250dp"
-		android:layout_height="wrap_content"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_circles_top_right"
-		android:src="@drawable/mp_circles_upper_right"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<ImageView
-		android:id="@+id/iv_tr_tri"
-		android:layout_width="210dp"
-		android:layout_height="160dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/triangle_above_srijan_circle"
-		android:src="@drawable/triangle_upper_above_circle"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<ImageView
-		android:id="@+id/srijan"
-		android:layout_width="210dp"
-		android:layout_height="120dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/fetsu_presents_srijan_20"
-		android:scaleX="0.8"
-		android:scaleY="0.8"
-		android:src="@drawable/srijan20_upper"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<ImageView
-		android:id="@+id/iv_profile"
-		android:layout_width="100dp"
-		android:layout_height="120dp"
-		android:layout_marginTop="24dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_profile_circle"
-		android:scaleY="1.2"
-		android:src="@drawable/avengerpro"
-		app:layout_constraintEnd_toStartOf="@id/iv_tr_circles"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<TextView
-		android:id="@+id/timer"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="24dp"
-		android:background="@drawable/timer_background"
-		android:contentDescription="@string/main_page_timer_background"
-		android:lineSpacingMultiplier="1.5"
-		android:padding="30dp"
-		android:scaleY="0.5"
-		android:shadowColor="#f99245"
-		android:shadowDx="-3"
-		android:shadowDy="-3"
-		android:shadowRadius="1"
-		android:textColor="#ffffff"
-		android:textSize="32sp"
-		android:textStyle="italic"
-		app:layout_constraintBottom_toTopOf="@+id/iv_about"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/iv_tr_tri"
-		tools:text="19 DAYS 1 HOUR TO GO" />
-
-	<ImageView
-		android:id="@+id/iv_mp_bottom_back"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_background_bottom"
-		android:src="@drawable/mp_back_bottom"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
-
-	<ImageView
-		android:id="@+id/iv_sponsor"
-		android:layout_width="120dp"
-		android:layout_height="120dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_sponsor"
-		android:src="@drawable/sponsorswhite"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toStartOf="@id/iv_gallery"
-		app:layout_constraintStart_toStartOf="parent" />
-
-	<ImageView
-		android:id="@+id/iv_gallery"
-		android:layout_width="120dp"
-		android:layout_height="120dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_gallery"
-		android:src="@drawable/gallerywhite"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toStartOf="@id/iv_sponsor"
-		app:layout_constraintStart_toEndOf="@id/iv_ca" />
-
-	<ImageView
-		android:id="@+id/iv_ca"
-		android:layout_width="120dp"
-		android:layout_height="120dp"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_ambassador"
-		android:src="@drawable/campusambassador"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@+id/iv_gallery" />
-
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/options1"
+	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.62" />
+		android:layout_height="match_parent"
+		android:orientation="vertical">
 
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/options2"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.3" />
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="@color/colorPrimary"
+			android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/options3"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.87" />
+		<fragment
+			android:id="@+id/nav_host_fragment"
+			android:name="androidx.navigation.fragment.NavHostFragment"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:defaultNavHost="true"
+			app:navGraph="@navigation/nav_graph" />
 
-	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/qrline"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.75" />
+	</LinearLayout>
 
-	<ImageView
-		android:id="@+id/iv_about"
+	<com.google.android.material.navigation.NavigationView
+		android:id="@+id/navigationView"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_about"
-		android:scaleType="fitStart"
-		android:scaleX="1.4"
-		android:scaleY="1.3"
-		android:src="@drawable/about"
-		app:layout_constraintBottom_toTopOf="@+id/options2"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/options1" />
+		android:layout_height="match_parent"
+		android:layout_gravity="start"
+		android:fitsSystemWindows="true"
+		app:headerLayout="@layout/header_layout"
+		app:menu="@menu/drawer_menu" />
 
-	<ImageView
-		android:id="@+id/iv_events"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:adjustViewBounds="true"
-		android:contentDescription="@string/main_page_events"
-		android:scaleType="fitStart"
-		android:scaleX="1.3"
-		android:scaleY="1.3"
-		android:src="@drawable/events"
-		app:layout_constraintBottom_toTopOf="@+id/options3"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/options2" />
-
-	<ImageView
-		android:id="@+id/iv_scan_qr"
-		android:layout_width="300dp"
-		android:layout_height="58dp"
-		android:layout_marginTop="15dp"
-		android:background="@drawable/qrbackground"
-		android:contentDescription="@string/scan_qr_code"
-		android:padding="10dp"
-		android:src="@drawable/srijan_qr"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="@+id/qrline"
-		app:layout_constraintTop_toBottomOf="@id/iv_events" />
-
-	<ImageView
-		android:id="@+id/iv_merch"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="4dp"
-		android:contentDescription="@string/srijan_merchandise"
-		android:src="@drawable/merch"
-		app:layout_constraintBottom_toTopOf="@id/tv_srijan_merch"
-		app:layout_constraintStart_toStartOf="parent" />
-
-	<TextView
-		android:id="@+id/tv_srijan_merch"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="4dp"
-		android:background="#33ffffff"
-		android:ellipsize="end"
-		android:fontFamily="sans-serif"
-		android:gravity="center_horizontal"
-		android:text="@string/buy_our_tshirt_now"
-		android:textColor="@android:color/white"
-		app:layout_constraintBottom_toTopOf="@id/iv_mp_bottom_back"
-		app:layout_constraintEnd_toEndOf="@id/iv_merch"
-		app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

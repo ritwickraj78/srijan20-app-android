@@ -1,15 +1,19 @@
 package in.srijanju.androidapp.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,11 +33,11 @@ import in.srijanju.androidapp.model.SrijanEvent;
 
 import static in.srijanju.androidapp.view.MainPage.SRIJAN_WORKSHOP_URL;
 
-public class Events extends SrijanActivity {
+public class Events extends Fragment {
 
   final ArrayList<SrijanEvent> events = new ArrayList<>();
 
-  final EventAdapter adapter = new EventAdapter(this, events);
+   EventAdapter adapter ;
 
   ChildEventListener eventListener = new ChildEventListener() {
 	@Override
@@ -69,32 +73,40 @@ public class Events extends SrijanActivity {
 	}
   };
   DatabaseReference ref;
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+	}
 
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.activity_events, container, false);
+	}
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_events);
+  public void onActivityCreated(Bundle savedInstanceState) {
+	super.onActivityCreated(savedInstanceState);
+	  adapter = new EventAdapter(getActivity(), events);
 
 	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
-	  Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show();
+	  Toast.makeText(getActivity(), "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
-	  AuthUI.getInstance().signOut(getApplicationContext());
-	  Intent intent = new Intent(Events.this, MainActivity.class);
+	  AuthUI.getInstance().signOut(getContext());
+	  Intent intent = new Intent(getActivity(), MainActivity.class);
 	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
-	  finish();
 	  return;
 	}
 
 
-	GridView gridView = findViewById(R.id.gv_events);
+	GridView gridView = getView().findViewById(R.id.gv_events);
 
 	// Open the event description page to show the details of the event
 	gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 	  @Override
 	  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Intent intent = new Intent(Events.this, EventDescription.class);
+		Intent intent = new Intent(getActivity(), EventDescription.class);
 		// Put the event object of the event that was clicked
 		Bundle bundle = new Bundle();
 		bundle.putSerializable("event", events.get(position));
@@ -104,7 +116,7 @@ public class Events extends SrijanActivity {
 	});
 	gridView.setAdapter(adapter);
 
-	findViewById(R.id.tv_works).setOnClickListener(new View.OnClickListener() {
+	getView().findViewById(R.id.tv_works).setOnClickListener(new View.OnClickListener() {
 	  @Override
 	  public void onClick(View v) {
 		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(SRIJAN_WORKSHOP_URL));
@@ -117,7 +129,7 @@ public class Events extends SrijanActivity {
   }
 
   @Override
-  protected void onResume() {
+  public void onResume() {
 	super.onResume();
 
 	// Get the list of events
@@ -125,7 +137,7 @@ public class Events extends SrijanActivity {
   }
 
   @Override
-  protected void onPause() {
+  public void onPause() {
 	super.onPause();
 	ref.removeEventListener(eventListener);
 	events.clear();
