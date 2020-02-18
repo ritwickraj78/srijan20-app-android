@@ -28,7 +28,7 @@ import in.srijanju.androidapp.controller.EventRegisteredAdapter;
 import in.srijanju.androidapp.model.User;
 public class Profile extends Fragment {
 	final ArrayList<Pair<String, String>> events = new ArrayList<>();
-	final EventRegisteredAdapter adapter = new EventRegisteredAdapter(getActivity(), events);
+	EventRegisteredAdapter adapter;
 	FirebaseUser user;
 	ChildEventListener regEventListener = new ChildEventListener() {
 		@Override
@@ -68,8 +68,9 @@ public class Profile extends Fragment {
 		return inflater.inflate(R.layout.activity_profile, container, false);
 	}
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		 adapter = new EventRegisteredAdapter(getActivity(), events);
 		user = FirebaseAuth.getInstance().getCurrentUser();
 		if (user == null) {
 			Toast.makeText(getActivity(), "Not logged in", Toast.LENGTH_SHORT).show();

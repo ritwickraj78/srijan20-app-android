@@ -243,21 +243,21 @@ public class MainPage extends SrijanActivity implements
 
 		int id = menuItem.getItemId();
 
-		switch (id) {
-
-			case R.id.first:
-				navController.navigate(R.id.firstFragment);
-				break;
-
-			case R.id.second:
-				navController.navigate(R.id.secondFragment);
-				break;
-
-			case R.id.third:
-				navController.navigate(R.id.thirdFragment);
-				break;
-
-		}
+//		switch (id) {
+//
+//			case R.id.first:
+//				navController.navigate(R.id.firstFragment);
+//				break;
+//
+//			case R.id.second:
+//				navController.navigate(R.id.secondFragment);
+//				break;
+//
+//			case R.id.third:
+//				navController.navigate(R.id.thirdFragment);
+//				break;
+//
+//		}
 		return true;
 
 	}

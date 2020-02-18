@@ -5,21 +5,21 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/defaultFragment">
 
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="in.srijanju.androidapp.view.About"
-        android:label="About"
-        tools:layout="@layout/activity_about" />
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="in.srijanju.androidapp.view.Events"
-        android:label="Events"
-        tools:layout="@layout/activity_events" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="in.srijanju.androidapp.view.Ambassador"
-        android:label="Campus Ambassador"
-        tools:layout="@layout/activity_ca" />
+<!--    <fragment-->
+<!--        android:id="@+id/firstFragment"-->
+<!--        android:name="in.srijanju.androidapp.view.About"-->
+<!--        android:label="About"-->
+<!--        tools:layout="@layout/activity_about" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/secondFragment"-->
+<!--        android:name="in.srijanju.androidapp.view.Events"-->
+<!--        android:label="Events"-->
+<!--        tools:layout="@layout/activity_events" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/thirdFragment"-->
+<!--        android:name="in.srijanju.androidapp.view.Ambassador"-->
+<!--        android:label="Campus Ambassador"-->
+<!--        tools:layout="@layout/activity_ca" />-->
     <fragment
         android:id="@+id/defaultFragment"
         android:name="in.srijanju.androidapp.view.Profile"
