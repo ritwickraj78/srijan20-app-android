@@ -1,6 +1,5 @@
 package in.srijanju.androidapp.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,10 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -30,20 +25,13 @@ public class About extends Fragment {
 		  "promoting, showcasing, and encouraging concepts and research beyond the known periphery. " +
 		  "SRIJAN is not just a fest for us. It is a Religion.";
 
-  private static final String API_KEY = "AIzaSyBYBVz-xSdiiIE2bueRgccFKcQ7odLosVg";
-  private static final String VIDEO_ID = "7oAc0d_W8-k";
 
+  @Nullable
+  @Override
+  public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	return inflater.inflate(R.layout.activity_about, container, false);
+  }
 
-	@Override
-	public void onAttach(Context context) {
-		super.onAttach(context);
-	}
-
-	@Nullable
-	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.activity_about, container, false);
-	}
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
 	super.onActivityCreated(savedInstanceState);
@@ -53,13 +41,12 @@ public class About extends Fragment {
 	if (user == null) {
 	  Toast.makeText(getActivity(), "Not logged in", Toast.LENGTH_SHORT).show();
 	  FirebaseAuth.getInstance().signOut();
-	  AuthUI.getInstance().signOut(getContext());
+	  AuthUI.getInstance().signOut(getActivity().getApplicationContext());
 	  Intent intent = new Intent(getActivity(), MainActivity.class);
 	  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 	  startActivity(intent);
 	  return;
 	}
-
 
 
 	TextView srijanText = getView().findViewById(R.id.srijanText);
@@ -100,7 +87,6 @@ public class About extends Fragment {
 	  }
 	});
   }
-
 
 
   @Override

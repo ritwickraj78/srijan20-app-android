@@ -1,7 +1,6 @@
 package in.srijanju.androidapp.view;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 		  @Override
 		  public void run() {
 			final Button btnSign = findViewById(R.id.btn_mp_signin);
-			btnSign.setBackgroundColor(Color.parseColor("#33ffffff"));
+			btnSign.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
 			btnSign.setOnClickListener(new View.OnClickListener() {
 			  @Override
 			  public void onClick(View v) {
@@ -101,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 								.setAvailableProviders(providers)
 								.setIsSmartLockEnabled(false)
 								.setLogo(R.drawable.ic_launcher)
+								.setTheme(R.style.AppTheme)
 								.build(),
 						RC_SIGN_IN);
 			  }

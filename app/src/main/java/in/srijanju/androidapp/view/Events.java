@@ -1,6 +1,5 @@
 package in.srijanju.androidapp.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 import in.srijanju.androidapp.R;
-import in.srijanju.androidapp.SrijanActivity;
 import in.srijanju.androidapp.controller.EventAdapter;
 import in.srijanju.androidapp.model.SrijanEvent;
 
@@ -37,7 +35,7 @@ public class Events extends Fragment {
 
   final ArrayList<SrijanEvent> events = new ArrayList<>();
 
-   EventAdapter adapter ;
+  EventAdapter adapter;
 
   ChildEventListener eventListener = new ChildEventListener() {
 	@Override
@@ -73,20 +71,17 @@ public class Events extends Fragment {
 	}
   };
   DatabaseReference ref;
-	@Override
-	public void onAttach(Context context) {
-		super.onAttach(context);
-	}
 
-	@Nullable
-	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.activity_events, container, false);
-	}
+  @Nullable
+  @Override
+  public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	return inflater.inflate(R.layout.activity_events, container, false);
+  }
+
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
 	super.onActivityCreated(savedInstanceState);
-	  adapter = new EventAdapter(getActivity(), events);
+	adapter = new EventAdapter(getActivity(), events);
 
 	FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 	if (user == null) {
