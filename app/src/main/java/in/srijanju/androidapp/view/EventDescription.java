@@ -1,9 +1,13 @@
 package in.srijanju.androidapp.view;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +41,12 @@ public class EventDescription extends SrijanActivity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_event_description);
 
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+	  Window window = getWindow();
+	  window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+	  window.setStatusBarColor(Color.BLACK);
+	}
+
 	Bundle extras = getIntent().getExtras();
 	if (extras == null) {
 	  Toast.makeText(this, "Something went wrong! :(", Toast.LENGTH_SHORT).show();
@@ -54,7 +64,6 @@ public class EventDescription extends SrijanActivity {
 	TextView event_name = findViewById(R.id.event_name);
 	TextView event_type = findViewById(R.id.event_type);
 	TextView event_desc = findViewById(R.id.event_description);
-	TextView event_rules_heading = findViewById(R.id.event_rules);
 	TextView event_rules = findViewById(R.id.event_rules_content);
 	TextView event_contact = findViewById(R.id.event_contact_content);
 	register = findViewById(R.id.button);
@@ -65,8 +74,7 @@ public class EventDescription extends SrijanActivity {
 	event_desc.setText(event.desc);
 	if (event.rules != null && !event.rules.equals("") && !event.rules.equals("none")) {
 	  event_rules.setText(event.rules);
-	  event_rules_heading.setVisibility(View.VISIBLE);
-	  event_rules.setVisibility(View.VISIBLE);
+	  findViewById(R.id.cv_rules).setVisibility(View.VISIBLE);
 	}
 	event_contact.setText(event.poc);
 
@@ -103,12 +111,14 @@ public class EventDescription extends SrijanActivity {
 	  public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 		if (!dataSnapshot.exists()) {
 		  register.setText(R.string.register);
-		  register.setBackground(new ColorDrawable(getResources().getColor(android.R.color.black)));
+		  register.setBackground(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
+		  register.setTextColor(getResources().getColor(android.R.color.white));
 		  register.setOnClickListener(regClickListener);
 		  register.setClickable(true);
 		} else {
 		  register.setText(R.string.registered);
 		  register.setBackground(new ColorDrawable(getResources().getColor(android.R.color.darker_gray)));
+		  register.setTextColor(getResources().getColor(android.R.color.black));
 		  register.setOnClickListener(null);
 		  register.setClickable(false);
 		}
