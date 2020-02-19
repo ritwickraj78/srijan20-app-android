@@ -36,14 +36,14 @@
 		<activity
 			android:name=".view.EventRegister"
 			android:screenOrientation="locked"
-			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+			android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 		<activity
 			android:name=".view.CameraScan"
 			android:screenOrientation="locked" />
 		<activity
 			android:name=".view.SrijanRegister"
 			android:screenOrientation="locked"
-			android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+			android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 		<activity
 			android:name=".view.EventDescription"
 			android:screenOrientation="locked" />
@@ -70,8 +70,7 @@
 			android:screenOrientation="locked" />
 		<activity
 			android:name=".view.MainActivity"
-			android:screenOrientation="locked"
-			android:theme="@style/AppTheme">
+			android:screenOrientation="locked">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 

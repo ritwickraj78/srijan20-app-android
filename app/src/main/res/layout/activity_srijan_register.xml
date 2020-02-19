@@ -14,13 +14,9 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal"
 		android:fontFamily="sans-serif-condensed-light"
-		android:shadowColor="@android:color/darker_gray"
-		android:shadowDx="-4"
-		android:shadowDy="-4"
-		android:shadowRadius="1"
 		android:text="@string/srijan"
 		android:textAllCaps="true"
-		android:textColor="#eee"
+		android:textColor="@android:color/black"
 		android:textScaleX="1.2"
 		android:textSize="40sp" />
 
@@ -35,7 +31,7 @@
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_name"
-				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="15dp"
@@ -57,7 +53,7 @@
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_email"
-				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp">
@@ -72,7 +68,7 @@
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_clg"
-				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="15dp"
@@ -92,7 +88,7 @@
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_degree"
-				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="15dp"
@@ -112,7 +108,7 @@
 
 			<com.google.android.material.textfield.TextInputLayout
 				android:id="@+id/in_reg_course"
-				style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="15dp"
@@ -137,7 +133,7 @@
 				android:layout_marginTop="8dp"
 				android:inputType="number"
 				android:padding="8dp"
-				app:ms_text_color="@android:color/white" />
+				app:ms_text_color="@android:color/black" />
 
 			<TextView
 				android:layout_width="wrap_content"
@@ -148,7 +144,7 @@
 				android:layout_marginEnd="4dp"
 				android:gravity="center"
 				android:text="@string/you_can_not_change_your_details_later_please_fill_carefully"
-				android:textColor="@android:color/holo_orange_light"
+				android:textColor="@android:color/holo_orange_dark"
 				android:textSize="12sp" />
 
 			<Button

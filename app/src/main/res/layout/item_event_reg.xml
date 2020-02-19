@@ -5,16 +5,13 @@
 	android:id="@+id/ll_event"
 	android:layout_width="wrap_content"
 	android:layout_height="90dp"
-	android:clickable="true"
-	android:focusable="true"
-	android:foreground="?android:attr/selectableItemBackground"
-	app:cardBackgroundColor="#33ffffff"
-	app:cardCornerRadius="4dp"
+	app:cardElevation="0dp"
 	tools:ignore="PrivateResource">
 
 	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="90dp">
+		android:layout_height="90dp"
+		android:background="@drawable/outline_general">
 
 		<TextView
 			android:id="@+id/tv_event_name"
@@ -23,16 +20,13 @@
 			android:layout_centerInParent="true"
 			android:layout_marginStart="4dp"
 			android:layout_marginEnd="4dp"
+			android:layout_marginBottom="4dp"
 			android:ellipsize="end"
 			android:fontFamily="sans-serif-light"
-			android:lines="1"
-			android:shadowColor="#f99245"
-			android:shadowDx="-2"
-			android:shadowDy="-2"
-			android:shadowRadius="1"
 			android:textAllCaps="true"
-			android:textColor="@color/cardview_light_background"
+			android:textColor="@android:color/holo_blue_dark"
 			android:textSize="18sp"
+			android:textStyle="bold"
 			tools:text="H42" />
 
 		<TextView
@@ -41,13 +35,9 @@
 			android:layout_height="wrap_content"
 			android:layout_alignParentBottom="true"
 			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="4dp"
 			android:ellipsize="end"
 			android:fontFamily="sans-serif-light"
-			android:shadowColor="#f99245"
-			android:shadowDx="-2"
-			android:shadowDy="-2"
-			android:shadowRadius="1"
-			android:textColor="@color/cardview_light_background"
 			android:textSize="14sp"
 			tools:text="test" />
 	</RelativeLayout>

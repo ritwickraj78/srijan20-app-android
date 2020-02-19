@@ -66,16 +66,13 @@ public class SrijanRegister extends AppCompatActivity {
 	// Set the possible values of year
 	final MaterialSpinner spinner = findViewById(R.id.spinner_year);
 	spinner.setItems("1st year", "2nd year", "3rd year", "4th year", "5th year");
-	spinner.setBackgroundResource(R.drawable.background);
+	spinner.setBackgroundResource(R.drawable.outline_general);
 	spinner.getListView()
-			.setDivider(new ColorDrawable(Color.parseColor("#33ffffff")));
-	spinner.getListView().setDividerHeight(4);
-	spinner.getPopupWindow()
-			.setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
+			.setDivider(new ColorDrawable(Color.parseColor("#33000000")));
+	spinner.getListView().setDividerHeight(1);
 
 	// Submit the details
 	Button btnRegister = findViewById(R.id.btn_register);
-	btnRegister.setBackgroundColor(Color.DKGRAY);
 	btnRegister.setOnClickListener(new View.OnClickListener() {
 	  @Override
 	  public void onClick(View v) {
